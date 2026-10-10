@@ -122,6 +122,12 @@ section + section{margin-top:clamp(48px,7vw,88px)}
 .addon-card{position:relative;display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:inherit;border-radius:22px;overflow:hidden;
   background:var(--panel);border:1px solid var(--panel-line);box-shadow:0 18px 50px rgba(3,6,30,.55);transition:transform .25s ease, box-shadow .25s ease}
 .addon-card:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:0 26px 60px rgba(3,6,30,.65),0 0 0 1px var(--gold)}
+.pick{position:absolute;top:14px;right:14px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 14px 7px 10px;border-radius:999px;
+  font-family:var(--f-display);font-weight:700;font-size:.9rem;letter-spacing:.04em;color:#2a1a00;
+  background:linear-gradient(180deg,#fff0b8,var(--gold) 50%,var(--gold-deep));box-shadow:0 6px 20px rgba(3,6,30,.55),0 0 0 2px rgba(255,240,184,.55),0 0 22px rgba(243,201,92,.6)}
+.pick svg{width:18px;height:18px;flex:none;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6))}
+@media (prefers-reduced-motion:no-preference){.pick svg{animation:twinkle 2.6s ease-in-out infinite}}
+@keyframes twinkle{50%{transform:scale(1.18) rotate(12deg)}}
 .addon-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;max-width:100%}
 .addon-card .body{display:grid;gap:10px;padding:18px 20px 22px;align-content:start}
 .addon-card .who{font-size:var(--step--1);color:var(--sky-azure);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
@@ -360,6 +366,7 @@ footer .farewell{font-size:1rem}
         </div>
       </a>
       <a class="addon-card" href="#parcours">
+        <span class="pick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Notre coup de cœur</span>
         <img src="../assets/lunas-parcours.webp" alt="Logo de Luna's Parcours : un chat bengal aventurier sur une carte avec un itinéraire en pointillés" width="720" height="720">
         <div class="body">
           <span class="who">Montée en niveau Alliance 1–30</span>
@@ -390,10 +397,13 @@ footer .farewell{font-size:1rem}
         <tr><td>Messages au groupe et touches au survol</td><td><span class="yes">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
         <tr><td>Flèche GPS entre zones, bateaux et vols</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Itinéraire de quêtes le plus court</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
-        <tr><td>Choisir vos objectifs : objets, métiers, chaînes, secrets</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
-        <tr><td>Chaque quête, avec une raison pour chaque quête passée</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Seulement les objectifs choisis : objets, métiers, chaînes, secrets</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
+        <tr><td>Toute l'histoire : chaque quête, avec une raison pour chaque quête passée</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Barre de progression pour chaque zone et métier</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Récompenses que votre personnage peut porter</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Meilleure récompense pour votre rôle mise en évidence</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Étapes restantes pour chaque objet choisi</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Quêtes de donjon, signalées comme contenu de groupe</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Fenêtre d'équipement meilleur</td><td><span class="yes">✓</span></td><td><span class="no">—</span></td><td><span class="yes">✓*</span></td></tr>
         <tr><td>Niveaux</td><td><span class="val">1–60</span></td><td><span class="val">1–30</span></td><td><span class="val">1–60</span></td></tr>
         <tr><td>Langues de l'interface</td><td><span class="val">11</span></td><td><span class="val">5</span></td><td><span class="val">5</span></td></tr>
@@ -646,7 +656,7 @@ footer .farewell{font-size:1rem}
   <section aria-labelledby="pc-goals">
     <div class="sec-head"><span class="eyebrow">Objectifs</span><h2 id="pc-goals">Quatre façons de choisir</h2></div>
     <div class="grid-2">
-      <div class="feat"><h3>Objets</h3><p>Les récompenses de quête que votre personnage peut vraiment porter, regroupées par quête et triées par niveau, avec les caractéristiques et le gain par rapport à ce que vous portez.</p></div>
+      <div class="feat"><h3>Objets</h3><p>Les récompenses de quête que votre personnage peut vraiment porter, regroupées par quête et triées par niveau, avec les caractéristiques et le gain par rapport à ce que vous portez. Le meilleur choix de chaque quête pour votre rôle est mis en évidence par un vert discret, et l'addon demande confirmation avant d'ajouter un objet plus faible que le vôtre. Les récompenses de donjon sont aussi listées, marquées en rouge.</p></div>
       <div class="feat"><h3>Métiers</h3><p>Herboristerie, Alchimie ou Cuisine jusqu'à 225, dans toutes les zones de l'Alliance. L'itinéraire vous mène au maître le plus proche, au rang suivant au bon moment, et à chaque composant, marchand ou herbe nécessaire.</p></div>
       <div class="feat"><h3>Longues chaînes</h3><p>Les chaînes de cinq quêtes ou plus dans vos zones, les plus longues d'abord. Cochez-en une pour ajouter toute la chaîne.</p></div>
       <div class="feat"><h3>Secrets</h3><p>Les quêtes cachées de Forever, comme la chaîne du <em>Cozy Sleeping Bag</em> (+3 % d'expérience au repos) ou <em>Silver of the Waves</em>.</p></div>
@@ -654,16 +664,15 @@ footer .farewell{font-size:1rem}
   </section>
 
   <section aria-labelledby="pc-modes">
-    <div class="sec-head"><span class="eyebrow">Trois façons de jouer</span><h2 id="pc-modes">Vous choisissez jusqu'où va la route</h2></div>
+    <div class="sec-head"><span class="eyebrow">Deux façons de jouer</span><h2 id="pc-modes">Vos objectifs, ou de l'XP rapide</h2></div>
     <div class="table-wrap"><table>
       <thead><tr><th>Bouton</th><th>Ce que contient l'itinéraire</th></tr></thead>
       <tbody>
         <tr><td><strong>Créer l'itinéraire</strong></td><td>Seulement vos objectifs et les quêtes qui les débloquent.</td></tr>
         <tr><td><strong>Juste monter</strong></td><td>XP rapide : quêtes de 3 niveaux en dessous du vôtre à 3 au-dessus. Recalculé à chaque niveau.</td></tr>
-        <tr><td><strong>Mode histoire</strong></td><td>Toute l'histoire de vos zones : chaque quête jusqu'à votre niveau + 3, grises comprises, avec les chaînes complètes.</td></tr>
       </tbody>
     </table></div>
-    <p class="lede" style="margin-top:14px">Les trois prennent ensemble les quêtes proches, respectent l'ordre des chaînes et ne gardent jamais plus de 15 quêtes ouvertes. Dans nos tests en forêt d'Elwynn, le mode histoire a réduit de plus de moitié la distance à pied.</p>
+    <p class="lede" style="margin-top:14px">Les deux prennent ensemble les quêtes proches, respectent l'ordre des chaînes et ne gardent jamais plus de 15 quêtes ouvertes. Dans nos tests en forêt d'Elwynn, cet ordre a réduit de plus de moitié la distance à pied. Vous voulez toute l'histoire de vos zones ? C'est <a href="#journey">Luna's Journey</a>.</p>
   </section>
 
   <section aria-labelledby="pc-gps">
@@ -679,7 +688,7 @@ footer .farewell{font-size:1rem}
   <section aria-labelledby="pc-shots">
     <div class="sec-head"><span class="eyebrow">En jeu</span><h2 id="pc-shots">Captures d'écran</h2></div>
     <div class="gallery">
-      <figure class="shot wide"><button class="zoom" type="button"><img src="../assets/pc19-goals.webp" alt="En jeu : l'onglet Objectifs avec les récompenses regroupées par quête, le gain par rapport à ce que vous portez, le filtre par rôle et les trois boutons d'itinéraire" width="1280" height="633" loading="lazy"></button><figcaption>Onglet Objectifs : récompenses regroupées par quête avec leur gain, le filtre par rôle et les trois façons de créer l'itinéraire</figcaption></figure>
+      <figure class="shot wide"><button class="zoom" type="button"><img src="../assets/pc19-goals.webp" alt="En jeu : l'onglet Objectifs avec les récompenses regroupées par quête, le gain par rapport à ce que vous portez, le filtre par rôle et les boutons d'itinéraire" width="1280" height="633" loading="lazy"></button><figcaption>Onglet Objectifs : récompenses regroupées par quête avec leur gain, le filtre par rôle et les boutons d'itinéraire</figcaption></figure>
       <figure class="shot"><button class="zoom" type="button"><img src="../assets/pc19-compare.webp" alt="En jeu : en survolant un objectif, l'objet s'affiche à côté de celui que vous portez, avec les caractéristiques qui changent" width="1280" height="633" loading="lazy"></button><figcaption>Survolez un objectif pour le comparer à ce que vous portez</figcaption></figure>
       <figure class="shot"><button class="zoom" type="button"><img src="../assets/pc19-compact.webp" alt="En jeu : la fenêtre de Luna's Parcours réduite, avec seulement les objectifs et l'étape en cours, pendant que la flèche montre le chemin" width="1280" height="633" loading="lazy"></button><figcaption>Gardez la fenêtre petite : objectifs, étape en cours et flèche</figcaption></figure>
       <figure class="shot"><button class="zoom" type="button"><img src="../assets/pc19-options.webp" alt="En jeu : l'onglet Options avec les boutons de langue et les réglages de la flèche GPS" width="1280" height="633" loading="lazy"></button><figcaption>Options : langue, flèche, épingle sur la carte, bouton de la minicarte</figcaption></figure>

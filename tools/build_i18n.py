@@ -277,9 +277,9 @@ T = [
 
  # Parcours: goals
  ('>Goals</span><h2 id="pc-goals">Four ways to choose</h2>', '>Obiettivi</span><h2 id="pc-goals">Quattro modi di scegliere</h2>', '>Objectifs</span><h2 id="pc-goals">Quatre façons de choisir</h2>'),
- ('<h3>Items</h3><p>Quest rewards your character can actually wear, grouped by quest and sorted by level, with the stats and the gain over what you wear now.',
-  '<h3>Oggetti</h3><p>Ricompense delle missioni che il tuo personaggio può davvero indossare, raggruppate per missione e ordinate per livello, con le statistiche e il guadagno rispetto a ciò che indossi ora.',
-  '<h3>Objets</h3><p>Les récompenses de quête que votre personnage peut vraiment porter, regroupées par quête et triées par niveau, avec les caractéristiques et le gain par rapport à ce que vous portez.'),
+ ('<h3>Items</h3><p>Quest rewards your character can actually wear, grouped by quest and sorted by level, with the stats and the gain over what you wear now. The best choice of each quest for your role is highlighted in a discreet green, and the addon asks before you add something weaker than what you wear. Dungeon rewards are listed too, marked in red.',
+  '<h3>Oggetti</h3><p>Ricompense delle missioni che il tuo personaggio può davvero indossare, raggruppate per missione e ordinate per livello, con le statistiche e il guadagno rispetto a ciò che indossi ora. La scelta migliore di ogni missione per il tuo ruolo è evidenziata con un verde discreto, e l\'addon chiede conferma prima di aggiungere qualcosa di più debole di ciò che indossi. Ci sono anche le ricompense delle spedizioni, segnate in rosso.',
+  '<h3>Objets</h3><p>Les récompenses de quête que votre personnage peut vraiment porter, regroupées par quête et triées par niveau, avec les caractéristiques et le gain par rapport à ce que vous portez. Le meilleur choix de chaque quête pour votre rôle est mis en évidence par un vert discret, et l\'addon demande confirmation avant d\'ajouter un objet plus faible que le vôtre. Les récompenses de donjon sont aussi listées, marquées en rouge.'),
  ('<h3>Professions</h3><p>Herbalism, Alchemy or Cooking up to 225, in every Alliance zone. The route takes you to the nearest trainer, to the next rank at the right time, and to every reagent, vendor or herb you need.',
   '<h3>Professioni</h3><p>Erboristeria, Alchimia o Cucina fino a 225, in ogni zona dell\'Alleanza. Il percorso ti porta all\'istruttore più vicino, al grado successivo al momento giusto e a ogni reagente, venditore o erba che ti serve.',
   '<h3>Métiers</h3><p>Herboristerie, Alchimie ou Cuisine jusqu\'à 225, dans toutes les zones de l\'Alliance. L\'itinéraire vous mène au maître le plus proche, au rang suivant au bon moment, et à chaque composant, marchand ou herbe nécessaire.'),
@@ -291,14 +291,13 @@ T = [
   '<h3>Secrets</h3><p>Les quêtes cachées de Forever, comme la chaîne du <em>Cozy Sleeping Bag</em> (+3 % d\'expérience au repos) ou <em>Silver of the Waves</em>.'),
 
  # Parcours: modes
- ('>Three ways to play</span><h2 id="pc-modes">You choose how far the road goes</h2>', '>Tre modi di giocare</span><h2 id="pc-modes">Decidi tu fin dove arriva la strada</h2>', '>Trois façons de jouer</span><h2 id="pc-modes">Vous choisissez jusqu\'où va la route</h2>'),
+ ('>Two ways to play</span><h2 id="pc-modes">Your goals, or fast XP</h2>', '>Due modi di giocare</span><h2 id="pc-modes">I tuoi obiettivi, o esperienza veloce</h2>', '>Deux façons de jouer</span><h2 id="pc-modes">Vos objectifs, ou de l\'XP rapide</h2>'),
  ('<th>Button</th><th>What the route contains</th>', '<th>Pulsante</th><th>Cosa contiene il percorso</th>', '<th>Bouton</th><th>Ce que contient l\'itinéraire</th>'),
  ('<td><strong>Create route</strong></td><td>Only your goals and the quests that unlock them.</td>', '<td><strong>Crea percorso</strong></td><td>Solo i tuoi obiettivi e le missioni che li sbloccano.</td>', '<td><strong>Créer l\'itinéraire</strong></td><td>Seulement vos objectifs et les quêtes qui les débloquent.</td>'),
  ('<td><strong>Just level</strong></td><td>Fast XP: quests from 3 levels below yours to 3 above. Recalculated at every level.</td>', '<td><strong>Solo livellare</strong></td><td>Esperienza veloce: missioni da 3 livelli sotto il tuo a 3 sopra. Ricalcolato a ogni livello.</td>', '<td><strong>Juste monter</strong></td><td>XP rapide : quêtes de 3 niveaux en dessous du vôtre à 3 au-dessus. Recalculé à chaque niveau.</td>'),
- ('<td><strong>Story mode</strong></td><td>The whole story of your zones: every quest up to your level + 3, grey ones too, with complete chains.</td>', '<td><strong>Modalità storia</strong></td><td>Tutta la storia delle tue zone: ogni missione fino al tuo livello + 3, anche quelle grigie, con le catene complete.</td>', '<td><strong>Mode histoire</strong></td><td>Toute l\'histoire de vos zones : chaque quête jusqu\'à votre niveau + 3, grises comprises, avec les chaînes complètes.</td>'),
- ('All three pick up nearby quests together, respect chain order and keep no more than 15 quests open at once. In our tests on Elwynn Forest, story mode cut the walking distance by more than half.',
-  'Tutti e tre raccolgono insieme le missioni vicine, rispettano l\'ordine delle catene e non tengono mai più di 15 missioni aperte. Nei nostri test nella Foresta di Elwynn, la modalità storia ha più che dimezzato la distanza a piedi.',
-  'Les trois prennent ensemble les quêtes proches, respectent l\'ordre des chaînes et ne gardent jamais plus de 15 quêtes ouvertes. Dans nos tests en forêt d\'Elwynn, le mode histoire a réduit de plus de moitié la distance à pied.'),
+ ('Both pick up nearby quests together, respect chain order and keep no more than 15 quests open at once. In our tests on Elwynn Forest, this order cut the walking distance by more than half. Want the whole story of your zones? That is <a href="#journey">Luna\'s Journey</a>.',
+  'Entrambi raccolgono insieme le missioni vicine, rispettano l\'ordine delle catene e non tengono mai più di 15 missioni aperte. Nei nostri test nella Foresta di Elwynn, questo ordine ha più che dimezzato la distanza a piedi. Vuoi tutta la storia delle tue zone? È <a href="#journey">Luna\'s Journey</a>.',
+  'Les deux prennent ensemble les quêtes proches, respectent l\'ordre des chaînes et ne gardent jamais plus de 15 quêtes ouvertes. Dans nos tests en forêt d\'Elwynn, cet ordre a réduit de plus de moitié la distance à pied. Vous voulez toute l\'histoire de vos zones ? C\'est <a href="#journey">Luna\'s Journey</a>.'),
 
  # Parcours: GPS
  ('>The GPS arrow</span><h2 id="pc-gps">From Rut\'theran to Auberdine without a wrong turn</h2>', '>La freccia GPS</span><h2 id="pc-gps">Da Rut\'theran ad Auberdine senza sbagliare strada</h2>', '>La flèche GPS</span><h2 id="pc-gps">De Rut\'theran à Auberdine sans se tromper de route</h2>'),
@@ -378,8 +377,8 @@ T = [
  ('<td>Party messages and hover keys</td>', '<td>Messaggi al gruppo e tasti al passaggio</td>', '<td>Messages au groupe et touches au survol</td>'),
  ('<td>GPS arrow across zones, ships and flights</td>', '<td>Freccia GPS tra zone, navi e voli</td>', '<td>Flèche GPS entre zones, bateaux et vols</td>'),
  ('<td>Shortest quest route</td>', '<td>Percorso più breve tra le missioni</td>', '<td>Itinéraire de quêtes le plus court</td>'),
- ('<td>Choose your goals: items, professions, chains, secrets</td>', '<td>Scegli i tuoi obiettivi: oggetti, professioni, catene, segreti</td>', '<td>Choisir vos objectifs : objets, métiers, chaînes, secrets</td>'),
- ('<td>Every quest, with a reason for every skip</td>', '<td>Ogni missione, con un motivo per ogni salto</td>', '<td>Chaque quête, avec une raison pour chaque quête passée</td>'),
+ ('<td>Only the goals you choose: items, professions, chains, secrets</td>', '<td>Solo gli obiettivi che scegli: oggetti, professioni, catene, segreti</td>', '<td>Seulement les objectifs choisis : objets, métiers, chaînes, secrets</td>'),
+ ('<td>The whole story: every quest, with a reason for every skip</td>', '<td>Tutta la storia: ogni missione, con un motivo per ogni salto</td>', '<td>Toute l\'histoire : chaque quête, avec une raison pour chaque quête passée</td>'),
  ('<td>Progress bar for every zone and profession</td>', '<td>Barra di avanzamento per ogni zona e professione</td>', '<td>Barre de progression pour chaque zone et métier</td>'),
  ('<td>Quest rewards your character can wear</td>', '<td>Ricompense che il tuo personaggio può indossare</td>', '<td>Récompenses que votre personnage peut porter</td>'),
  ('<td>Gear upgrade pop-up</td>', '<td>Popup di equipaggiamento migliore</td>', '<td>Fenêtre d\'équipement meilleur</td>'),
@@ -460,12 +459,12 @@ T = [
  ('Route tab: your goals with the steps left for each, the step to do now and the next ones. The arrow under the character points to the target.',
   'Scheda Percorso: i tuoi obiettivi con i passi che mancano per ognuno, il passo da fare ora e i successivi. La freccia sotto il personaggio punta alla destinazione.',
   'Onglet Itinéraire : vos objectifs avec les étapes restantes pour chacun, l\'étape à faire et les suivantes. La flèche sous le personnage pointe vers la cible.'),
- ('alt="In game: the Goals tab with quest rewards grouped by quest, their gain over what you wear, the role filter and the three route buttons"',
-  'alt="In gioco: la scheda Obiettivi con le ricompense raggruppate per missione, il guadagno rispetto a ciò che indossi, il filtro per ruolo e i tre pulsanti del percorso"',
-  'alt="En jeu : l\'onglet Objectifs avec les récompenses regroupées par quête, le gain par rapport à ce que vous portez, le filtre par rôle et les trois boutons d\'itinéraire"'),
- ('Goals tab: rewards grouped by quest with their gain, the role filter and the three ways to build a route',
-  'Scheda Obiettivi: ricompense raggruppate per missione con il loro guadagno, il filtro per ruolo e i tre modi di creare il percorso',
-  'Onglet Objectifs : récompenses regroupées par quête avec leur gain, le filtre par rôle et les trois façons de créer l\'itinéraire'),
+ ('alt="In game: the Goals tab with quest rewards grouped by quest, their gain over what you wear, the role filter and the route buttons"',
+  'alt="In gioco: la scheda Obiettivi con le ricompense raggruppate per missione, il guadagno rispetto a ciò che indossi, il filtro per ruolo e i pulsanti del percorso"',
+  'alt="En jeu : l\'onglet Objectifs avec les récompenses regroupées par quête, le gain par rapport à ce que vous portez, le filtre par rôle et les boutons d\'itinéraire"'),
+ ('Goals tab: rewards grouped by quest with their gain, the role filter and the route buttons',
+  'Scheda Obiettivi: ricompense raggruppate per missione con il loro guadagno, il filtro per ruolo e i pulsanti del percorso',
+  'Onglet Objectifs : récompenses regroupées par quête avec leur gain, le filtre par rôle et les boutons d\'itinéraire'),
  ('alt="In game: hovering a goal shows the item next to what you wear now, with the stat changes"',
   'alt="In gioco: passando sopra un obiettivo si vede l\'oggetto accanto a quello che indossi ora, con le statistiche che cambiano"',
   'alt="En jeu : en survolant un objectif, l\'objet s\'affiche à côté de celui que vous portez, avec les caractéristiques qui changent"'),
@@ -502,6 +501,13 @@ T = [
  ('<p class="lede">Three addons that never step on each other. Use one, or all three together.</p>',
   '<p class="lede">Tre addon che non si pestano mai i piedi. Usane uno, o tutti e tre insieme.</p>',
   '<p class="lede">Trois addons qui ne se marchent jamais sur les pieds. Utilisez-en un, ou les trois ensemble.</p>'),
+ # ---------- v6: Parcours v0.20-v0.23, comparison ----------
+ ('<td>Best reward for your role highlighted</td>', '<td>Ricompensa migliore per il tuo ruolo evidenziata</td>', '<td>Meilleure récompense pour votre rôle mise en évidence</td>'),
+ ('<td>Steps left until each chosen item</td>', '<td>Passi mancanti per ogni oggetto scelto</td>', '<td>Étapes restantes pour chaque objet choisi</td>'),
+ ('<td>Dungeon quests, marked as group content</td>', '<td>Missioni delle spedizioni, segnate come contenuto di gruppo</td>', '<td>Quêtes de donjon, signalées comme contenu de groupe</td>'),
+ ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Our best pick</span>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Il nostro preferito</span>',
+  '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Notre coup de cœur</span>'),
 ]
 
 src = open(SRC, encoding="utf-8").read()

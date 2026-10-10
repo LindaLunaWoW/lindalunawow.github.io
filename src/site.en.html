@@ -113,6 +113,12 @@ section + section{margin-top:clamp(48px,7vw,88px)}
 .addon-card{position:relative;display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:inherit;border-radius:22px;overflow:hidden;
   background:var(--panel);border:1px solid var(--panel-line);box-shadow:0 18px 50px rgba(3,6,30,.55);transition:transform .25s ease, box-shadow .25s ease}
 .addon-card:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:0 26px 60px rgba(3,6,30,.65),0 0 0 1px var(--gold)}
+.pick{position:absolute;top:14px;right:14px;z-index:2;display:inline-flex;align-items:center;gap:6px;padding:7px 14px 7px 10px;border-radius:999px;
+  font-family:var(--f-display);font-weight:700;font-size:.9rem;letter-spacing:.04em;color:#2a1a00;
+  background:linear-gradient(180deg,#fff0b8,var(--gold) 50%,var(--gold-deep));box-shadow:0 6px 20px rgba(3,6,30,.55),0 0 0 2px rgba(255,240,184,.55),0 0 22px rgba(243,201,92,.6)}
+.pick svg{width:18px;height:18px;flex:none;filter:drop-shadow(0 1px 0 rgba(255,255,255,.6))}
+@media (prefers-reduced-motion:no-preference){.pick svg{animation:twinkle 2.6s ease-in-out infinite}}
+@keyframes twinkle{50%{transform:scale(1.18) rotate(12deg)}}
 .addon-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;max-width:100%}
 .addon-card .body{display:grid;gap:10px;padding:18px 20px 22px;align-content:start}
 .addon-card .who{font-size:var(--step--1);color:var(--sky-azure);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
@@ -348,6 +354,7 @@ footer .farewell{font-size:1rem}
         </div>
       </a>
       <a class="addon-card" href="#parcours">
+        <span class="pick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Our best pick</span>
         <img src="assets/lunas-parcours.webp" alt="Luna's Parcours logo: a Bengal cat adventurer over a quest map with a dotted route" width="720" height="720">
         <div class="body">
           <span class="who">Alliance levelling 1–30</span>
@@ -378,10 +385,13 @@ footer .farewell{font-size:1rem}
         <tr><td>Party messages and hover keys</td><td><span class="yes">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
         <tr><td>GPS arrow across zones, ships and flights</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Shortest quest route</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
-        <tr><td>Choose your goals: items, professions, chains, secrets</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
-        <tr><td>Every quest, with a reason for every skip</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Only the goals you choose: items, professions, chains, secrets</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
+        <tr><td>The whole story: every quest, with a reason for every skip</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Progress bar for every zone and profession</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Quest rewards your character can wear</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Best reward for your role highlighted</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Steps left until each chosen item</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Dungeon quests, marked as group content</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Gear upgrade pop-up</td><td><span class="yes">✓</span></td><td><span class="no">—</span></td><td><span class="yes">✓*</span></td></tr>
         <tr><td>Levels</td><td><span class="val">1–60</span></td><td><span class="val">1–30</span></td><td><span class="val">1–60</span></td></tr>
         <tr><td>Interface languages</td><td><span class="val">11</span></td><td><span class="val">5</span></td><td><span class="val">5</span></td></tr>
@@ -634,7 +644,7 @@ footer .farewell{font-size:1rem}
   <section aria-labelledby="pc-goals">
     <div class="sec-head"><span class="eyebrow">Goals</span><h2 id="pc-goals">Four ways to choose</h2></div>
     <div class="grid-2">
-      <div class="feat"><h3>Items</h3><p>Quest rewards your character can actually wear, grouped by quest and sorted by level, with the stats and the gain over what you wear now.</p></div>
+      <div class="feat"><h3>Items</h3><p>Quest rewards your character can actually wear, grouped by quest and sorted by level, with the stats and the gain over what you wear now. The best choice of each quest for your role is highlighted in a discreet green, and the addon asks before you add something weaker than what you wear. Dungeon rewards are listed too, marked in red.</p></div>
       <div class="feat"><h3>Professions</h3><p>Herbalism, Alchemy or Cooking up to 225, in every Alliance zone. The route takes you to the nearest trainer, to the next rank at the right time, and to every reagent, vendor or herb you need.</p></div>
       <div class="feat"><h3>Long chains</h3><p>Quest chains of five or more quests in your zones, longest first. Tick one to add the whole chain.</p></div>
       <div class="feat"><h3>Secret</h3><p>Hidden Forever quests, such as the Cozy Sleeping Bag chain (+3% XP while resting) or Silver of the Waves.</p></div>
@@ -642,16 +652,15 @@ footer .farewell{font-size:1rem}
   </section>
 
   <section aria-labelledby="pc-modes">
-    <div class="sec-head"><span class="eyebrow">Three ways to play</span><h2 id="pc-modes">You choose how far the road goes</h2></div>
+    <div class="sec-head"><span class="eyebrow">Two ways to play</span><h2 id="pc-modes">Your goals, or fast XP</h2></div>
     <div class="table-wrap"><table>
       <thead><tr><th>Button</th><th>What the route contains</th></tr></thead>
       <tbody>
         <tr><td><strong>Create route</strong></td><td>Only your goals and the quests that unlock them.</td></tr>
         <tr><td><strong>Just level</strong></td><td>Fast XP: quests from 3 levels below yours to 3 above. Recalculated at every level.</td></tr>
-        <tr><td><strong>Story mode</strong></td><td>The whole story of your zones: every quest up to your level + 3, grey ones too, with complete chains.</td></tr>
       </tbody>
     </table></div>
-    <p class="lede" style="margin-top:14px">All three pick up nearby quests together, respect chain order and keep no more than 15 quests open at once. In our tests on Elwynn Forest, story mode cut the walking distance by more than half.</p>
+    <p class="lede" style="margin-top:14px">Both pick up nearby quests together, respect chain order and keep no more than 15 quests open at once. In our tests on Elwynn Forest, this order cut the walking distance by more than half. Want the whole story of your zones? That is <a href="#journey">Luna's Journey</a>.</p>
   </section>
 
   <section aria-labelledby="pc-gps">
@@ -667,7 +676,7 @@ footer .farewell{font-size:1rem}
   <section aria-labelledby="pc-shots">
     <div class="sec-head"><span class="eyebrow">In game</span><h2 id="pc-shots">Screenshots</h2></div>
     <div class="gallery">
-      <figure class="shot wide"><button class="zoom" type="button"><img src="assets/pc19-goals.webp" alt="In game: the Goals tab with quest rewards grouped by quest, their gain over what you wear, the role filter and the three route buttons" width="1280" height="633" loading="lazy"></button><figcaption>Goals tab: rewards grouped by quest with their gain, the role filter and the three ways to build a route</figcaption></figure>
+      <figure class="shot wide"><button class="zoom" type="button"><img src="assets/pc19-goals.webp" alt="In game: the Goals tab with quest rewards grouped by quest, their gain over what you wear, the role filter and the route buttons" width="1280" height="633" loading="lazy"></button><figcaption>Goals tab: rewards grouped by quest with their gain, the role filter and the route buttons</figcaption></figure>
       <figure class="shot"><button class="zoom" type="button"><img src="assets/pc19-compare.webp" alt="In game: hovering a goal shows the item next to what you wear now, with the stat changes" width="1280" height="633" loading="lazy"></button><figcaption>Hover a goal to compare it with what you wear now</figcaption></figure>
       <figure class="shot"><button class="zoom" type="button"><img src="assets/pc19-compact.webp" alt="In game: the Luna's Parcours window kept small, with only the goals and the current step, while the arrow leads the way" width="1280" height="633" loading="lazy"></button><figcaption>Keep the window small: goals, current step and the arrow</figcaption></figure>
       <figure class="shot"><button class="zoom" type="button"><img src="assets/pc19-options.webp" alt="In game: the Options tab with language buttons and GPS arrow settings" width="1280" height="633" loading="lazy"></button><figcaption>Options: language, arrow, world map pin, minimap button</figcaption></figure>
