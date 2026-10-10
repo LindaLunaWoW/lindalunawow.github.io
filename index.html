@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="SmartHeal LindaLuna and Luna's Parcours: free addons for WoW Forever, made in memory of Luna.">
+<title>LindaLuna Addons</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Alegreya:ital,wght@1,400;1,500&family=Alegreya+Sans:wght@400;500;700&display=swap">
+<style>
+/* Layout: a dusk sky over Zephras Isle — floating-island hero, two addon "banners", Luna's moonlit dedication; each addon opens its own view (#smartheal, #parcours). Single committed look (sky at dusk), not theme-switched. */
+:root{
+  --sky-night:#0b1036;      /* zenith */
+  --sky-mid:#1d3586;        /* open sky */
+  --sky-azure:#4fa9e6;      /* wind & mist */
+  --dawn:#f7b267;           /* horizon glow */
+  --gold:#f3c95c;           /* titles, Luna */
+  --gold-deep:#b9862a;
+  --violet:#a88cf2;         /* Skyborne eyes, arcane */
+  --mist:#eaf2ff;           /* main text */
+  --mist-dim:#b7c4e6;       /* secondary text */
+  --panel:rgba(14,22,66,.72);
+  --panel-line:rgba(243,201,92,.28);
+  --hot:#3fdc7c; --direct:#f3c95c; --emer:#ff5b5b; --shield:#5fb4ff; --swift:#c07bff;
+  --f-display:"Cinzel","Trajan Pro","Times New Roman",serif;
+  --f-body:"Alegreya Sans","Segoe UI",system-ui,sans-serif;
+  --f-voice:"Alegreya",Georgia,serif;
+  --step--1:clamp(.82rem,.78rem + .2vw,.9rem);
+  --step-0:clamp(1rem,.96rem + .25vw,1.1rem);
+  --step-1:clamp(1.2rem,1.1rem + .5vw,1.45rem);
+  --step-2:clamp(1.5rem,1.3rem + 1vw,2.1rem);
+  --step-3:clamp(2rem,1.6rem + 2.2vw,3.4rem);
+  --radius:14px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--f-body);font-size:var(--step-0);line-height:1.6;color:var(--mist);
+  background:var(--sky-night);
+  background-image:
+    radial-gradient(120% 60% at 50% 105%, rgba(247,178,103,.35), transparent 60%),
+    linear-gradient(180deg,var(--sky-night) 0%, #15215e 35%, var(--sky-mid) 70%, #2f4fa6 100%);
+  background-attachment:fixed;
+  min-height:100vh;
+}
+#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.wrap{position:relative;z-index:1;max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+a{color:var(--gold)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--sky-azure);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h2{font-size:var(--step-2);color:var(--gold);letter-spacing:.02em}
+h3{font-size:var(--step-1);color:var(--mist);font-weight:700}
+p{margin:0}
+.lede{color:var(--mist-dim);max-width:62ch}
+.eyebrow{font-family:var(--f-body);font-weight:700;font-size:var(--step--1);letter-spacing:.18em;text-transform:uppercase;color:var(--sky-azure)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  background:rgba(11,16,54,.7);border-bottom:1px solid var(--panel-line)}
+.nav .wrap{display:flex;align-items:center;gap:12px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--gold);font-family:var(--f-display);font-weight:700;font-size:1.15rem;letter-spacing:.04em;margin-right:auto}
+.brand svg{flex:none}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap}
+.nav-links a{text-decoration:none;color:var(--mist-dim);font-weight:500;padding:6px 10px;border-radius:999px;font-size:.95rem}
+.nav-links a:hover{color:var(--mist);background:rgba(255,255,255,.06)}
+.nav-links a[aria-current="page"]{color:var(--sky-night);background:var(--gold)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-body);font-weight:700;font-size:1rem;text-decoration:none;
+  padding:11px 20px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:linear-gradient(180deg,#ffe08a,var(--gold) 45%,var(--gold-deep));color:#2a1a00;box-shadow:0 4px 18px rgba(243,201,92,.35), inset 0 1px 0 rgba(255,255,255,.6)}
+.btn-ghost{background:rgba(255,255,255,.06);border-color:rgba(234,242,255,.25);color:var(--mist)}
+.btn-row{display:flex;gap:10px;flex-wrap:wrap}
+
+/* views */
+.view{padding-block:clamp(28px,5vw,56px) 64px}
+.view[hidden]{display:none!important}
+section + section{margin-top:clamp(48px,7vw,88px)}
+
+/* hero */
+.hero{display:grid;gap:18px;text-align:center;justify-items:center;padding-top:8px;position:relative}
+.hero h1{font-size:var(--step-3);font-weight:900;letter-spacing:.04em;
+  background:linear-gradient(180deg,#fff3c8 0%,var(--gold) 50%,var(--gold-deep) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 3px 0 rgba(10,15,43,.6))}
+.hero .lede{text-align:center}
+.islands{width:min(560px,100%);height:auto;max-width:100%;margin-top:-6px}
+.isle{animation:bob 7s ease-in-out infinite}
+.isle.b{animation-duration:9s;animation-delay:-3s}
+.isle.c{animation-duration:8s;animation-delay:-5s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+
+/* addon banners */
+.addons{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:clamp(18px,3vw,32px);margin-top:clamp(20px,4vw,36px)}
+.addon-card{position:relative;display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:inherit;border-radius:22px;overflow:hidden;
+  background:var(--panel);border:1px solid var(--panel-line);box-shadow:0 18px 50px rgba(3,6,30,.55);transition:transform .25s ease, box-shadow .25s ease}
+.addon-card:hover{transform:translateY(-6px) rotate(-.3deg);box-shadow:0 26px 60px rgba(3,6,30,.65),0 0 0 1px var(--gold)}
+.addon-card img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;max-width:100%}
+.addon-card .body{display:grid;gap:10px;padding:18px 20px 22px;align-content:start}
+.addon-card .who{font-size:var(--step--1);color:var(--sky-azure);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.addon-card p{color:var(--mist-dim)}
+.addon-card .go{font-weight:700;color:var(--gold);display:inline-flex;gap:6px;align-items:center}
+
+/* Luna */
+.luna{position:relative;display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,4vw,40px);align-items:center;
+  padding:clamp(22px,4vw,44px);border-radius:28px;
+  background:radial-gradient(90% 120% at 0% 0%, rgba(168,140,242,.28), transparent 60%), linear-gradient(160deg,rgba(11,16,54,.9),rgba(29,53,134,.75));
+  border:1px solid rgba(168,140,242,.35)}
+.moon{width:clamp(96px,16vw,150px);height:auto;filter:drop-shadow(0 0 28px rgba(243,201,92,.55))}
+.luna .text{display:grid;gap:14px;min-width:0}
+.luna p.story{font-family:var(--f-voice);font-style:italic;font-size:var(--step-1);line-height:1.5;color:var(--mist);max-width:60ch}
+.luna p.small{color:var(--mist-dim);max-width:60ch}
+.farewell{font-family:var(--f-display);font-weight:700;color:var(--gold);font-size:var(--step-1);letter-spacing:.03em}
+@media (max-width:640px){.luna{grid-template-columns:1fr;justify-items:center;text-align:center}}
+
+/* donate */
+.donate{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;padding:clamp(20px,3.5vw,32px);border-radius:var(--radius);
+  background:linear-gradient(90deg,rgba(247,178,103,.18),rgba(79,169,230,.12));border:1px dashed rgba(247,178,103,.5)}
+.donate .text{display:grid;gap:6px;min-width:0}
+@media (max-width:640px){.donate{grid-template-columns:1fr}}
+
+/* addon detail pages */
+.page-head{display:grid;grid-template-columns:minmax(0,260px) 1fr;gap:clamp(18px,4vw,40px);align-items:center}
+.page-head img{width:100%;border-radius:22px;border:1px solid var(--panel-line);box-shadow:0 18px 50px rgba(3,6,30,.55)}
+.page-head .text{display:grid;gap:14px;min-width:0}
+.page-head h1{font-size:var(--step-3);color:var(--gold);font-weight:900}
+.tagline{font-family:var(--f-voice);font-style:italic;font-size:var(--step-1);color:var(--mist)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:var(--step--1);font-weight:700;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(234,242,255,.18);color:var(--mist-dim)}
+@media (max-width:640px){.page-head{grid-template-columns:1fr}.page-head img{max-width:220px}}
+
+.sec-head{display:grid;gap:8px;margin-bottom:22px}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
+.feat{display:grid;gap:8px;align-content:start;padding:20px;border-radius:var(--radius);background:var(--panel);border:1px solid rgba(234,242,255,.1);min-width:0}
+.feat p,.feat li{color:var(--mist-dim)}
+.feat ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.feat .k{color:var(--mist);font-weight:700}
+
+/* tables */
+.table-wrap{overflow-x:auto;border-radius:var(--radius);border:1px solid rgba(234,242,255,.12);background:var(--panel)}
+table{border-collapse:collapse;width:100%;min-width:520px}
+th,td{text-align:left;padding:12px 16px;vertical-align:top;border-bottom:1px solid rgba(234,242,255,.08)}
+th{font-family:var(--f-body);font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--sky-azure)}
+td{color:var(--mist-dim)}
+td strong{color:var(--mist)}
+tr:last-child td{border-bottom:0}
+code,kbd{font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:.9em;background:rgba(0,0,0,.3);border:1px solid rgba(234,242,255,.15);border-radius:6px;padding:1px 6px;color:var(--gold);white-space:nowrap}
+
+/* SmartHeal frame mockup */
+.mock{border-radius:var(--radius);padding:16px;background:rgba(5,8,28,.85);border:1px solid rgba(234,242,255,.16);box-shadow:inset 0 0 0 1px rgba(0,0,0,.4);overflow-x:auto}
+.mock-title{font-family:var(--f-display);font-size:.85rem;color:var(--gold);margin-bottom:10px;letter-spacing:.06em}
+.sh-row{display:grid;grid-template-columns:150px 230px auto;gap:12px;align-items:center;padding:6px 0;min-width:560px}
+.sh-name{font-weight:700;font-size:.92rem;white-space:nowrap}
+.sh-bar{position:relative;height:22px;border-radius:4px;background:#2a1010;overflow:hidden;border:1px solid rgba(255,255,255,.18)}
+.sh-bar .hp{position:absolute;inset:0 auto 0 0;background:linear-gradient(180deg,#3fdc6a,#1c8f3d)}
+.sh-bar .inc{position:absolute;top:0;bottom:0;background:rgba(120,200,255,.6)}
+.sh-bar .lbl{position:absolute;inset:0;display:flex;justify-content:space-between;align-items:center;padding:0 6px;font-size:.75rem;font-weight:700;text-shadow:0 1px 2px #000}
+.sh-bar .dps{color:#ff8a8a}
+.sh-icons{display:flex;gap:6px}
+.ic{position:relative;width:34px;height:34px;border-radius:6px;border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-size:.62rem;font-weight:700;color:#fff;text-shadow:0 1px 2px #000;opacity:.45}
+.ic.on{opacity:1}
+.ic.hot{background:radial-gradient(circle at 40% 35%,#7ff0a8,#1b7a43)}
+.ic.dir{background:radial-gradient(circle at 40% 35%,#ffe7a0,#9a6c12)}
+.ic.emr{background:radial-gradient(circle at 40% 35%,#ff9d9d,#8a1d1d)}
+.ic.shd{background:radial-gradient(circle at 40% 35%,#b8e0ff,#1d5e9e)}
+.ic.on.hot{box-shadow:0 0 0 2px var(--hot),0 0 14px var(--hot)}
+.ic.on.dir{box-shadow:0 0 0 2px var(--direct),0 0 14px var(--direct)}
+.ic.on.emr{box-shadow:0 0 0 2px var(--emer),0 0 14px var(--emer)}
+.ic.on.shd{box-shadow:0 0 0 2px var(--shield),0 0 14px var(--shield)}
+@media (prefers-reduced-motion:no-preference){.ic.on{animation:pulse 1.6s ease-in-out infinite}}
+@keyframes pulse{50%{filter:brightness(1.25)}}
+.mock-cap{margin-top:10px;font-size:var(--step--1);color:var(--mist-dim)}
+
+.legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:10px}
+.leg{display:flex;gap:10px;align-items:center;padding:10px 14px;border-radius:12px;background:var(--panel);border:1px solid rgba(234,242,255,.1)}
+.dot{width:14px;height:14px;border-radius:50%;flex:none}
+.leg span:last-child{color:var(--mist-dim);font-size:.95rem}
+.leg b{color:var(--mist)}
+
+/* Parcours mockup */
+.pc-mock{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px}
+@media (max-width:720px){.pc-mock{grid-template-columns:1fr}}
+.stepcard{border-radius:var(--radius);padding:18px;background:rgba(5,8,28,.85);border:1px solid rgba(234,242,255,.16);display:grid;gap:10px;min-width:0}
+.stepcard .now{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sky-azure);font-weight:700}
+.stepcard .what{font-weight:700;font-size:1.1rem}
+.stepcard .npc{color:var(--mist-dim)}
+.stepcard ol{margin:0;padding-left:1.2em;color:var(--mist-dim);font-size:.95rem;display:grid;gap:2px}
+.stepbtns{display:flex;gap:6px;flex-wrap:wrap}
+.stepbtns span{font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,.08);border:1px solid rgba(234,242,255,.2)}
+.arrowscene{border-radius:var(--radius);background:radial-gradient(80% 70% at 50% 100%,rgba(63,220,124,.18),transparent 70%),rgba(5,8,28,.85);border:1px solid rgba(234,242,255,.16);display:grid;place-items:center;padding:20px;gap:8px;text-align:center}
+.arrowscene svg{width:120px;height:auto}
+.arrowscene .dist{font-family:var(--f-display);font-weight:700;color:var(--gold);font-size:1.4rem}
+.arrowscene .tgt{color:var(--mist-dim);font-size:.95rem}
+@media (prefers-reduced-motion:no-preference){.gps{animation:sway 3.5s ease-in-out infinite;transform-origin:60px 60px}}
+@keyframes sway{0%,100%{transform:rotate(-8deg)}50%{transform:rotate(8deg)}}
+
+/* tutorial steps (real sequence) */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px;counter-reset:s}
+.steps > li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;padding:16px 18px;border-radius:var(--radius);background:var(--panel);border:1px solid rgba(234,242,255,.1)}
+.steps > li::before{content:counter(s);display:grid;place-items:center;width:40px;height:40px;border-radius:50%;
+  font-family:var(--f-display);font-weight:900;color:#2a1a00;background:linear-gradient(180deg,#ffe08a,var(--gold-deep))}
+.steps .c{display:grid;gap:6px;min-width:0}
+.steps .c p,.steps .c li{color:var(--mist-dim)}
+.steps .c ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
+
+/* screenshot slots */
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px}
+.shot{margin:0;display:grid;gap:8px}
+.shot .frame{aspect-ratio:16/10;max-width:100%;border-radius:12px;border:1.5px dashed rgba(79,169,230,.55);background:
+  repeating-linear-gradient(135deg,rgba(79,169,230,.07) 0 12px,transparent 12px 24px),rgba(5,8,28,.6);
+  display:grid;place-items:center;color:var(--sky-azure);font-weight:700;font-size:.9rem;text-align:center;padding:10px}
+.shot figcaption{color:var(--mist-dim);font-size:var(--step--1)}
+.zoom{display:block;padding:0;border:1px solid rgba(234,242,255,.18);border-radius:12px;overflow:hidden;background:#05081c;cursor:zoom-in;width:100%;
+  box-shadow:0 12px 34px rgba(3,6,30,.5);transition:transform .2s ease, box-shadow .2s ease}
+.zoom:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(3,6,30,.6),0 0 0 1px var(--gold)}
+.zoom img{display:block;width:100%;height:auto;max-width:100%}
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.gallery-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+@media (max-width:860px){.gallery-3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.gallery-3{grid-template-columns:1fr}}
+.sub-head{font-family:var(--f-display);color:var(--mist);font-size:var(--step-1);margin:28px 0 14px}
+.closeup{max-width:680px}
+.gallery .wide{grid-column:1 / -1}
+@media (max-width:640px){.gallery{grid-template-columns:1fr}}
+.feature-shot figcaption{font-size:var(--step-0)}
+.zoom-hint{font-size:var(--step--1);color:var(--sky-azure);font-weight:700}
+dialog.lightbox{border:0;padding:0;background:transparent;max-width:min(96vw,1600px);width:100%;color:var(--mist)}
+dialog.lightbox::backdrop{background:rgba(5,8,28,.88);backdrop-filter:blur(4px)}
+dialog.lightbox figure{margin:0;display:grid;gap:10px}
+dialog.lightbox img{width:100%;height:auto;max-height:82vh;object-fit:contain;border-radius:10px;border:1px solid rgba(243,201,92,.4);cursor:zoom-out}
+dialog.lightbox figcaption{text-align:center;color:var(--mist-dim)}
+dialog.lightbox .close{justify-self:center}
+
+.note{padding:14px 18px;border-radius:12px;background:rgba(168,140,242,.12);border:1px solid rgba(168,140,242,.35);color:var(--mist-dim)}
+.note strong{color:var(--mist)}
+
+.contact{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:18px;padding:16px 20px;border-radius:var(--radius);background:var(--panel);border:1px solid rgba(234,242,255,.12)}
+.contact .label{color:var(--mist-dim);flex:1 1 220px;min-width:0}
+.contact .label strong{color:var(--mist);display:block;font-family:var(--f-display);font-size:var(--step-1)}
+.mail{font-weight:700;color:var(--gold);user-select:all;word-break:break-all;text-decoration:none}
+.copy{font:inherit;font-size:.9rem;font-weight:700;padding:7px 14px;border-radius:999px;cursor:pointer;background:rgba(255,255,255,.06);border:1px solid rgba(234,242,255,.25);color:var(--mist)}
+.about{display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:clamp(20px,4vw,48px);align-items:center}
+.about img{width:100%;height:auto;max-width:100%;filter:drop-shadow(0 18px 40px rgba(3,6,30,.6))}
+.about .text{display:grid;gap:14px;min-width:0}
+.about .text p{color:var(--mist-dim);max-width:60ch}
+.about .text p.first{color:var(--mist);font-size:var(--step-1);font-family:var(--f-voice);font-style:italic;line-height:1.5}
+.pair{display:flex;flex-wrap:wrap;gap:10px}
+.pair .chip b{color:var(--gold)}
+@media (max-width:760px){.about{grid-template-columns:1fr;justify-items:center}.about img{max-width:380px}}
+footer{position:relative;z-index:1;border-top:1px solid var(--panel-line);background:rgba(11,16,54,.75)}
+footer .wrap{padding-block:28px;display:grid;gap:10px;color:var(--mist-dim);font-size:var(--step--1)}
+footer .farewell{font-size:1rem}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<canvas id="sky" aria-hidden="true"></canvas>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#home">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><path d="M20 3a13 13 0 1 0 9 22A11 11 0 0 1 20 3z" fill="#f3c95c"/></svg>
+      LindaLuna
+    </a>
+    <div class="nav-links">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#smartheal" data-nav="smartheal">SmartHeal</a>
+      <a href="#parcours" data-nav="parcours">Luna's Parcours</a>
+      <a href="#about" data-nav="about">About</a>
+      <a href="#support" data-nav="support">Support</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="view wrap" id="view-home">
+  <section class="hero">
+    <span class="eyebrow">Free addons for WoW Forever</span>
+    <h1>LindaLuna</h1>
+    <p class="lede">Two addons made by a Priest and a Druid who played side by side. One keeps your party alive, the other guides you along the shortest road. Both carry the name of Luna.</p>
+    <svg class="islands" viewBox="0 0 560 120" aria-hidden="true">
+      <defs>
+        <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a5a9e"/><stop offset="1" stop-color="#241d55"/></linearGradient>
+        <linearGradient id="grass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fe0a0"/><stop offset="1" stop-color="#2f9a6a"/></linearGradient>
+      </defs>
+      <g class="isle a">
+        <path d="M30 52 Q75 40 120 52 L96 84 L80 104 L64 86 Z" fill="url(#rock)"/>
+        <path d="M28 52 Q75 36 122 52 Q75 58 28 52Z" fill="url(#grass)"/>
+        <path d="M60 46 l4 -14 l4 14z M86 44 l5 -18 l5 18z" fill="#cfd8ff"/>
+      </g>
+      <g class="isle b">
+        <path d="M200 46 Q280 26 360 46 L330 82 L290 112 L250 84 Z" fill="url(#rock)"/>
+        <path d="M197 46 Q280 22 363 46 Q280 56 197 46Z" fill="url(#grass)"/>
+        <path d="M268 38 l6 -26 l6 26z" fill="#e9eeff"/><path d="M262 40 h24" stroke="#f3c95c" stroke-width="2"/>
+        <circle cx="274" cy="10" r="3" fill="#f3c95c"/>
+      </g>
+      <g class="isle c">
+        <path d="M430 58 Q480 48 530 58 L505 86 L488 100 L470 86 Z" fill="url(#rock)"/>
+        <path d="M428 58 Q480 44 532 58 Q480 64 428 58Z" fill="url(#grass)"/>
+        <path d="M455 54 q10 -16 24 -10 q-6 4 -4 10z" fill="#a88cf2"/>
+      </g>
+      <path d="M120 60 Q160 90 200 56 M360 56 Q395 88 430 62" stroke="#c9b37a" stroke-width="1.5" fill="none" stroke-dasharray="3 4"/>
+    </svg>
+  </section>
+
+  <section aria-labelledby="addons-h">
+    <h2 id="addons-h" class="sr-only" style="position:absolute;left:-9999px">The addons</h2>
+    <div class="addons">
+      <a class="addon-card" href="#smartheal">
+        <img src="assets/smartheal-lindaluna.webp" alt="SmartHeal LindaLuna logo: a Bengal cat in healer robes casting golden light" width="720" height="720">
+        <div class="body">
+          <span class="who">Priest &amp; Druid healing</span>
+          <h3>SmartHeal LindaLuna</h3>
+          <p>The right heal, at the right rank, on the right target. It reads incoming damage and lights the heal that will land in time.</p>
+          <span class="go">Discover SmartHeal →</span>
+        </div>
+      </a>
+      <a class="addon-card" href="#parcours">
+        <img src="assets/lunas-parcours.webp" alt="Luna's Parcours logo: a Bengal cat adventurer over a quest map with a dotted route" width="720" height="720">
+        <div class="body">
+          <span class="who">Alliance levelling 1–30</span>
+          <h3>Luna's Parcours</h3>
+          <p>Pick what you want. Get the shortest route to it. Follow the arrow, across zones, ships and flight paths.</p>
+          <span class="go">Discover Luna's Parcours →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section aria-labelledby="luna-h">
+    <div class="luna" id="luna">
+      <svg class="moon" viewBox="0 0 120 120" aria-hidden="true">
+        <defs><radialGradient id="mg" cx=".35" cy=".35" r=".8"><stop offset="0" stop-color="#fff6d6"/><stop offset=".6" stop-color="#f3c95c"/><stop offset="1" stop-color="#b9862a"/></radialGradient></defs>
+        <path d="M78 10a50 50 0 1 0 32 74A42 42 0 0 1 78 10z" fill="url(#mg)"/>
+        <g fill="#2a1a00" opacity=".55" transform="translate(30 62) scale(.9)">
+          <ellipse cx="14" cy="18" rx="9" ry="8"/><ellipse cx="3" cy="6" rx="4" ry="5"/><ellipse cx="11" cy="0" rx="4" ry="5"/><ellipse cx="20" cy="0" rx="4" ry="5"/><ellipse cx="27" cy="7" rx="4" ry="5"/>
+        </g>
+      </svg>
+      <div class="text">
+        <span class="eyebrow">In memory of Luna</span>
+        <h2 id="luna-h">She walked beside us on every road</h2>
+        <p class="story">Luna was the best companion and adventurer that Priestael and his brother Druidel LindaLuna ever had. She was with us through every forest and every storm. Now her light shines from above, like the moon over Teldrassil, and shows us the way when the path grows dark.</p>
+        <p class="small">Every heal cast with SmartHeal and every route drawn by Luna's Parcours carries a little of her courage. If you have lost a companion of your own, we hope these addons keep a small light on for you too. May Elune watch over us all.</p>
+        <p class="farewell">Might Luna guide you forward, always.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="about-h" id="about">
+    <div class="about">
+      <img src="assets/the-makers.webp" alt="Painting of a Priest in white and gold with a glowing staff and a Night Elf Druid with an antlered staff, walking behind Luna, a Bengal cat adventurer, with a quest map at their feet" width="900" height="900" loading="lazy">
+      <div class="text">
+        <span class="eyebrow">Who we are</span>
+        <h2 id="about-h">A Priest, a Druid and Luna</h2>
+        <p class="first">We are Priestael and Druidel LindaLuna, two brothers who level side by side in WoW Forever. One heals with the Light, the other with nature.</p>
+        <p>We built SmartHeal and Luna's Parcours because we wanted them for ourselves: the right heal at the right moment, and the shortest road to the gear we were after. We test every version in the beta with our own characters before it reaches you.</p>
+        <p>Luna walks in front, as she always did.</p>
+        <div class="pair"><span class="chip"><b>Priestael</b> · Priest</span><span class="chip"><b>Druidel LindaLuna</b> · Druid</span><span class="chip"><b>Luna</b> · leads the way</span></div>
+        <div class="btn-row"><a class="btn btn-ghost" href="#support">Support us or write to us</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="support-h" id="support">
+    <div class="donate">
+      <div class="text">
+        <span class="eyebrow">Free, now and always</span>
+        <h2 id="support-h">Support the work</h2>
+        <p class="lede">Both addons are free and will stay free. If they save your run, a small donation helps us keep them updated for every patch of WoW Forever.</p>
+      </div>
+      <a class="btn btn-gold" data-link="paypal" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9C1.2 8.9 3 5 6.6 5c2 0 3.4 1.2 4.1 2.4h.6C12 6.2 13.4 5 15.4 5 19 5 20.8 8.9 19.3 12 17 16.6 12 21 12 21z" fill="currentColor"/></svg>
+        Donate with PayPal
+      </a>
+    </div>
+    <div class="contact">
+      <p class="label"><strong>Questions, bugs, ideas?</strong>Write to us. Content creators who want to show the addons are welcome too.</p>
+      <a class="mail" data-mail href="#">LindaLunawow at gmail.com</a>
+      <button class="copy" type="button" data-copy-mail>Copy address</button>
+    </div>
+  </section>
+</div>
+
+<!-- ================= SMARTHEAL ================= -->
+<div class="view wrap" id="view-smartheal" hidden>
+  <section class="page-head">
+    <img src="assets/smartheal-lindaluna.webp" alt="SmartHeal LindaLuna logo" width="720" height="720">
+    <div class="text">
+      <span class="eyebrow">Healing assistant · Priest &amp; Druid</span>
+      <h1>SmartHeal LindaLuna</h1>
+      <p class="tagline">The right heal, at the right rank, on the right target, at a glance.</p>
+      <p class="lede">For every member of your party, SmartHeal lights up the spell and rank that fits right now: how much health is missing, how fast damage is coming in, and how long each heal takes to cast. It never casts anything by itself. You click, it shows you what makes sense.</p>
+      <div class="chips"><span class="chip">Party up to 5</span><span class="chip">11 client languages</span><span class="chip">Secret-values safe</span><span class="chip">Never auto-casts</span></div>
+      <div class="btn-row">
+        <a class="btn btn-gold" data-link="curse-smartheal" href="#">Download on CurseForge</a>
+        <a class="btn btn-ghost" href="#sh-howto">How to use it</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sh-see">
+    <div class="sec-head"><span class="eyebrow">What you see</span><h2 id="sh-see">One row per party member, one icon per heal</h2></div>
+    <figure class="shot feature-shot"><button class="zoom" type="button"><img src="assets/sh-group.webp" alt="In game in Auberdine: a party of two with the SmartHeal frame at the bottom of the screen" width="860" height="420"></button>
+      <figcaption>Grouped in Auberdine. The frame sits under your character: one row per party member, with your heals beside each health bar. <span class="zoom-hint">Tap any screenshot to enlarge it.</span></figcaption></figure>
+    <figure class="shot closeup" style="margin-top:16px"><button class="zoom" type="button"><img src="assets/sh-frame-closeup.webp" alt="Close-up of the SmartHeal frame: two rows, each with icons labelled R1, S2, L1, L2, L3 and the percentage of health each heal restores" width="678" height="180" loading="lazy"></button>
+      <figcaption>Close-up: each icon shows how much of that player's health it restores (12%, 23%, 14%, 26%, 45%). Above the rows, the five-second rule timer.</figcaption></figure>
+    <h3 class="sub-head">How the glows work</h3>
+    <div class="mock" role="img" aria-label="Illustration of the SmartHeal frame with three party members and their suggested heals">
+      <div class="mock-title">SmartHeal LindaLuna</div>
+      <div class="sh-row">
+        <span class="sh-name" style="color:#c79c6e">Thorgrim · Tank</span>
+        <div class="sh-bar"><div class="hp" style="width:34%"></div><div class="inc" style="left:34%;width:12%"></div><div class="lbl"><span>34%</span><span class="dps">-9%/s</span></div></div>
+        <div class="sh-icons"><span class="ic hot">Ren</span><span class="ic dir">GH</span><span class="ic emr on">FH</span><span class="ic shd on">PWS</span></div>
+      </div>
+      <div class="sh-row">
+        <span class="sh-name" style="color:#3fc7eb">Elyra · Mage</span>
+        <div class="sh-bar"><div class="hp" style="width:70%"></div><div class="lbl"><span>70%</span><span></span></div></div>
+        <div class="sh-icons"><span class="ic hot">Ren</span><span class="ic dir on">Heal 2</span><span class="ic emr">FH</span><span class="ic shd">PWS</span></div>
+      </div>
+      <div class="sh-row">
+        <span class="sh-name" style="color:#fff569">Kael · Rogue</span>
+        <div class="sh-bar"><div class="hp" style="width:86%"></div><div class="lbl"><span>86%</span><span class="dps">-1%/s</span></div></div>
+        <div class="sh-icons"><span class="ic hot on">Ren</span><span class="ic dir">Heal</span><span class="ic emr">FH</span><span class="ic shd">PWS</span></div>
+      </div>
+      <p class="mock-cap">Illustration. The tank takes a heavy hit: Flash Heal and Shield light up. The mage needs the smallest rank that tops her up. The rogue gets Renew, which out-heals his light damage on its own.</p>
+    </div>
+    <div class="legend" style="margin-top:16px">
+      <div class="leg"><span class="dot" style="background:var(--hot);box-shadow:0 0 10px var(--hot)"></span><span><b>Green</b> · HoT (Renew, Rejuvenation)</span></div>
+      <div class="leg"><span class="dot" style="background:var(--direct);box-shadow:0 0 10px var(--direct)"></span><span><b>Gold</b> · direct heal</span></div>
+      <div class="leg"><span class="dot" style="background:var(--emer);box-shadow:0 0 10px var(--emer)"></span><span><b>Red</b> · emergency (Flash Heal, Regrowth)</span></div>
+      <div class="leg"><span class="dot" style="background:var(--shield);box-shadow:0 0 10px var(--shield)"></span><span><b>Blue</b> · Power Word: Shield</span></div>
+      <div class="leg"><span class="dot" style="background:var(--swift);box-shadow:0 0 10px var(--swift)"></span><span><b>Purple</b> · Swiftmend</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sh-engine">
+    <div class="sec-head"><span class="eyebrow">The decision engine</span><h2 id="sh-engine">The smallest heal that lands in time</h2>
+      <p class="lede">SmartHeal measures the damage per second each player takes and estimates the time until death. Then it picks the smallest heal that lands before that and still covers the damage taken during the cast.</p></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Situation</th><th>What lights up</th></tr></thead>
+      <tbody>
+        <tr><td>Tank at 85%, light steady damage (1% HP/s)</td><td><strong>Renew / Rejuvenation</strong>. The HoT out-heals the damage, no mana wasted on a big heal.</td></tr>
+        <tr><td>Player at 70%, no incoming damage</td><td><strong>The smallest rank</strong> that tops them up. No overheal.</td></tr>
+        <tr><td>Tank hit for 70% of their health in one blow</td><td><strong>Flash Heal + Shield</strong> (Priest) or <strong>Regrowth + Swiftmend</strong> (Druid). Slow heals would land too late.</td></tr>
+        <tr><td>Your Renew is already ticking</td><td>No HoT suggestion until it expires.</td></tr>
+        <tr><td>You drop below 30% mana</td><td><strong>Mana-saving mode</strong>: smaller ranks, emergency heals only when truly needed.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="sh-more">
+    <div class="sec-head"><span class="eyebrow">Features</span><h2 id="sh-more">Everything on the bar, and around it</h2></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Everything on the bar</h3><ul>
+        <li>Incoming heals, yours and other healers'</li><li>Remaining HoT healing, shrinking as ticks land</li><li>Absorb shields and your buffs with timers</li><li>Damage per second in red, row dims out of range</li><li>Five-second-rule bar for mana regeneration</li></ul></div>
+      <div class="feat"><h3>Hover keys</h3><p>Hover a row and press <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd>… to cast the matching icon on that player. Move the mouse away and your action bar keys are back. Active only in a group by default, so solo play is never affected.</p></div>
+      <div class="feat"><h3>Party messages</h3><p>Automatic, editable messages when you go out of mana, pull aggro, take burst damage, drink or resurrect someone. Each has a <span class="k">Test</span> button that previews it only to you.</p></div>
+      <div class="feat"><h3>Gear upgrade alerts</h3><p>Loot an item that beats what you wear and a pop-up shows the gain and the stat changes, with Equip, Ignore and Close. Only items your character can really wear, weighted by your spec and talents.</p></div>
+      <div class="feat"><h3>Your real numbers</h3><p>SmartHeal reads your spellbook and the healing value of every rank from its tooltip, so talents and gear are included. New ranks appear as you learn them.</p></div>
+      <div class="feat"><h3>11 languages</h3><p>English, Deutsch, Français, Español (EU and AL), Italiano, Português, Русский, 한국어, 简体中文, 繁體中文. Spell names come straight from your client.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sh-shots">
+    <div class="sec-head"><span class="eyebrow">In game</span><h2 id="sh-shots">Screenshots</h2></div>
+    <div class="gallery">
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-gear.webp" alt="In game: the Better item available pop-up shows Hunter's Simple Cloak with +380%, +1 Stamina, +3 Armor, and Equip, Ignore and Close buttons" width="1280" height="625" loading="lazy"></button><figcaption>Gear upgrade pop-up: a better cloak looted on Zephras Isle, with the gain and the stat changes</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-italian.webp" alt="In game on an Italian client: the pop-up Oggetto migliore disponibile and the options in Italian, with Luna's farewell in English in the chat" width="796" height="390" loading="lazy"></button><figcaption>The same pop-up on an Italian client. Luna's farewell, previewed in the chat, keeps its English words</figcaption></figure>
+    </div>
+    <h3 class="sub-head">The options window</h3>
+    <div class="gallery-3">
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-general.webp" alt="Options, General tab: feature checkboxes, hover keys and threshold sliders" width="846" height="676" loading="lazy"></button><figcaption>General: features, hover keys and thresholds</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-language.webp" alt="Options with the language menu open, listing eleven languages" width="846" height="676" loading="lazy"></button><figcaption>Language menu: 11 languages, each in its own name</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-messages.webp" alt="Options, Messages tab: automatic party messages with edit fields and Test buttons" width="846" height="676" loading="lazy"></button><figcaption>Messages: edit, switch off and test each party message</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-spells.webp" alt="Options, Spells tab: Lesser Heal ranks with values and cast times, higher ranks marked to learn" width="846" height="676" loading="lazy"></button><figcaption>Spells: every rank with its value, % of your health and cast time</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-geartab.webp" alt="Options, Gear tab: upgrade alerts, stat profiles and the active profile's priority" width="846" height="676" loading="lazy"></button><figcaption>Gear: upgrade alerts and stat profile for your spec</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/sh-luna.webp" alt="Options, Luna tab: a moon icon and the dedication In memory of Luna" width="846" height="676" loading="lazy"></button><figcaption>The Luna tab, in every language</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="sh-howto" id="sh-howto">
+    <div class="sec-head"><span class="eyebrow">How to use it</span><h2 id="sh-howto-h">From download to your first heal</h2></div>
+    <ol class="steps">
+      <li><div class="c"><h3>Install</h3><p>Download from CurseForge and extract into <code>World of Warcraft/&lt;your Forever folder&gt;/Interface/AddOns/</code>. The folder must be named <code>SmartHeal</code>.</p></div></li>
+      <li><div class="c"><h3>Open the options</h3><p>Type <code>/sh</code>, right-click the frame, or left-click the moon on your minimap. Pick your language at the top right, or leave it on Automatic.</p></div></li>
+      <li><div class="c"><h3>Check your spells</h3><p>In the <strong>Spells</strong> tab every healing rank you know is listed with its value and cast time. Untick any rank you never want suggested.</p></div></li>
+      <li><div class="c"><h3>Join a group and heal</h3><p>Click the glowing icon, or hover the row and press its number. The suggestion updates as damage comes in.</p></div></li>
+      <li><div class="c"><h3>Tune it if you want</h3><ul><li><strong>Algorithm</strong>: reaction time, safety margin, stability</li><li><strong>Messages</strong>: edit or switch off each party message</li><li><strong>Gear</strong>: stat profile and minimum gain for alerts</li></ul></div></li>
+    </ol>
+    <div class="table-wrap" style="margin-top:18px"><table>
+      <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>/sh</code> or <code>/smartheal</code></td><td>Open the options</td></tr>
+        <tr><td><code>/shstatus</code></td><td>Mode, damage source, mana state and current thresholds</td></tr>
+        <tr><td><code>/shdebug</code></td><td>Spells in use with values and cast times</td></tr>
+        <tr><td><code>/shgear</code></td><td>Every equippable item in your bags and why it is suggested or skipped</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <p class="note"><strong>Luna's farewell.</strong> When you die, SmartHeal can say <em>Might Luna guide you forward, always</em> to your party. Every other message can be rewritten; this one can only be switched off. Either her words travel with you, or your death passes in silence.</p>
+  </section>
+</div>
+
+<!-- ================= LUNA'S PARCOURS ================= -->
+<div class="view wrap" id="view-parcours" hidden>
+  <section class="page-head">
+    <img src="assets/lunas-parcours.webp" alt="Luna's Parcours logo" width="720" height="720">
+    <div class="text">
+      <span class="eyebrow">Route planner &amp; GPS · Alliance 1–30</span>
+      <h1>Luna's Parcours</h1>
+      <p class="tagline">Pick what you want. Get the shortest route to it. Follow the arrow.</p>
+      <p class="lede">Choose your goals: quest reward items, professions, long quest chains, hidden quests. Luna's Parcours builds one route that collects them all in the best order, and an arrow under your character leads you to every quest giver, objective and turn-in. It never plays for you; it only shows the way.</p>
+      <div class="chips"><span class="chip">Human · Dwarf · Night Elf · Gnome · Skyborne</span><span class="chip">Zephras Isle, both factions</span><span class="chip">1132 quests · 28 zones</span><span class="chip">5 languages</span></div>
+      <div class="btn-row">
+        <a class="btn btn-gold" data-link="curse-parcours" href="#">Download on CurseForge</a>
+        <a class="btn btn-ghost" href="#pc-howto">How to use it</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pc-see">
+    <div class="sec-head"><span class="eyebrow">What you see</span><h2 id="pc-see">A step card and an arrow</h2></div>
+    <figure class="shot feature-shot"><button class="zoom" type="button"><img src="assets/pc-route.webp" alt="In game: the Luna's Parcours window shows step 18 of 21, learn Herbalism, with the next steps listed; a golden arrow under the character reads 392 m, straight ahead" width="1280" height="625"></button>
+      <figcaption>Step 18 of 21: learn Herbalism. The arrow under the character points to the trainer, 392 m straight ahead, and the next steps wait below. <span class="zoom-hint">Tap any screenshot to enlarge it.</span></figcaption></figure>
+    <div class="pc-mock" hidden>
+      <div class="stepcard" role="img" aria-label="Illustration of a route step card">
+        <span class="now">Now · step 4 of 18</span>
+        <span class="what">Turn in: Kobold Camp Cleanup</span>
+        <span class="npc">Marshal McBride · Northshire Abbey</span>
+        <div class="stepbtns"><span>Back</span><span>Skip</span><span>Done</span><span>Arrow</span></div>
+        <span class="now" style="color:var(--mist-dim)">Next 5 steps</span>
+        <ol><li>Accept: Investigate Echo Ridge</li><li>Accept: Brotherhood of Thieves</li><li>Kill kobold workers at Echo Ridge</li><li>Collect red burlap bandanas</li><li>Turn in both at Northshire</li></ol>
+      </div>
+      <div class="arrowscene" role="img" aria-label="Illustration of the GPS arrow pointing to the target, 48 yards ahead">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><g class="gps"><path d="M60 8 L92 92 L60 74 L28 92 Z" fill="#3fdc7c" stroke="#0b3d22" stroke-width="3" stroke-linejoin="round"/><path d="M60 8 L60 74 L28 92 Z" fill="#2bb563"/></g></svg>
+        <span class="dist">48 yd</span>
+        <span class="tgt">Marshal McBride · ahead</span>
+        <span class="tgt" style="font-size:.85rem">Illustration</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pc-goals">
+    <div class="sec-head"><span class="eyebrow">Goals</span><h2 id="pc-goals">Four ways to choose</h2></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Items</h3><p>Quest rewards your character can actually wear, grouped by quest and sorted by level, with the stats and the gain over what you wear now.</p></div>
+      <div class="feat"><h3>Professions</h3><p>Herbalism, Alchemy or Cooking up to a target skill, with the trainer, every reagent and where to get it.</p></div>
+      <div class="feat"><h3>Long chains</h3><p>Quest chains of five or more quests in your zones, longest first. Tick one to add the whole chain.</p></div>
+      <div class="feat"><h3>Secret</h3><p>Hidden Forever quests, such as the Cozy Sleeping Bag chain (+3% XP while resting) or Silver of the Waves.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pc-modes">
+    <div class="sec-head"><span class="eyebrow">Three ways to play</span><h2 id="pc-modes">You choose how far the road goes</h2></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Button</th><th>What the route contains</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Create route</strong></td><td>Only your goals and the quests that unlock them.</td></tr>
+        <tr><td><strong>Just level</strong></td><td>Fast XP: quests from 3 levels below yours to 3 above. Recalculated at every level.</td></tr>
+        <tr><td><strong>Story mode</strong></td><td>The whole story of your zones: every quest up to your level + 3, grey ones too, with complete chains.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="lede" style="margin-top:14px">All three pick up nearby quests together, respect chain order and keep no more than 15 quests open at once. In our tests on Elwynn Forest, story mode cut the walking distance by more than half.</p>
+  </section>
+
+  <section aria-labelledby="pc-gps">
+    <div class="sec-head"><span class="eyebrow">The GPS arrow</span><h2 id="pc-gps">From Rut'theran to Auberdine without a wrong turn</h2></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Across zones</h3><p>It tells you which ship, zeppelin, flight path or Skyboat to take and points to the departure point.</p></div>
+      <div class="feat"><h3>On the world map</h3><p>The destination gets the game's own map pin, so you can see mountains and rivers and choose your own path.</p></div>
+      <div class="feat"><h3>Best position first</h3><p>The game's own quest point, then a position you recorded, then the quest database, then the guide.</p></div>
+      <div class="feat"><h3>Checked by the server</h3><p>Every quest is checked with the game server before you see it. <span class="k">✓</span> confirmed, <span class="k">⏳</span> being checked.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pc-shots">
+    <div class="sec-head"><span class="eyebrow">In game</span><h2 id="pc-shots">Screenshots</h2></div>
+    <div class="gallery">
+      <figure class="shot wide"><button class="zoom" type="button"><img src="assets/pc-goals.webp" alt="In game: the Goals tab lists quest reward items grouped by quest, with upgrade values, the route preview with one bonus item and the Create route button" width="1280" height="625" loading="lazy"></button><figcaption>Goals tab: rewards grouped by quest with their gain, the role filter, and the preview (35 quests, 45 steps, one bonus item on the same route)</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/pc-arrow.webp" alt="In game: the arrow under the character reads 513 m, Halassa Fernbreeze, to your left" width="1280" height="625" loading="lazy"></button><figcaption>Route created: the arrow shows distance, target and direction</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/pc-turnin.webp" alt="In game: turn-in step To Valanaar, the arrow reads 46 m, slightly right" width="1280" height="625" loading="lazy"></button><figcaption>Turn-in at Valanaar, with the goals you are after listed above</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/pc-options.webp" alt="In game: the Options tab with language buttons and GPS arrow settings" width="1280" height="625" loading="lazy"></button><figcaption>Options: language, arrow, world map pin, minimap button</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="assets/pc-luna.webp" alt="In game: the Luna tab with a crescent moon and the dedication In memory of Luna" width="1280" height="625" loading="lazy"></button><figcaption>The Luna tab, in every language</figcaption></figure>
+    </div>
+  </section>
+
+  <section aria-labelledby="pc-howto-h" id="pc-howto">
+    <div class="sec-head"><span class="eyebrow">How to use it</span><h2 id="pc-howto-h">Create, change and follow a route</h2></div>
+    <ol class="steps">
+      <li><div class="c"><h3>Install and open</h3><p>Extract into <code>Interface/AddOns/</code> as a folder named <code>LunasParcours</code>. Open with the minimap button or <code>/parcours</code>.</p></div></li>
+      <li><div class="c"><h3>Choose where to search</h3><p>The zone you are in is always included. Press <strong>Zones…</strong> to tick other zones and plan ahead.</p></div></li>
+      <li><div class="c"><h3>Pick your goals</h3><ul><li><strong>Items</strong>: one reward per quest; green "+3.2" means an upgrade</li><li><strong>Professions</strong>: tick one, then a target like 25 / 50 / 75</li><li><strong>Long chains</strong> and <strong>Secret</strong>: tick to add, hover for details</li></ul></div></li>
+      <li><div class="c"><h3>Read the preview</h3><p>The box under the list sums up the plan, for example <em>6 quests, 18 steps · 2 bonuses</em>. Press <strong>Add</strong> to take free bonus items on the same route.</p></div></li>
+      <li><div class="c"><h3>Launch and follow</h3><p>Press <strong>Create route</strong>. The step card tells you what to do now; most steps complete by themselves. Use Done, Skip and Back for the rest.</p></div></li>
+      <li><div class="c"><h3>Change it any time</h3><p>Tick or untick goals and press <strong>Create route</strong> again. Quests you already accepted or finished stay done.</p></div></li>
+    </ol>
+    <div class="table-wrap" style="margin-top:18px"><table>
+      <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>/parcours</code> or <code>/lpc</code></td><td>Open or close the window</td></tr>
+        <tr><td><code>/parcours goals</code></td><td>Open the Goals tab</td></tr>
+        <tr><td><code>/parcours arrow</code></td><td>Show or hide the arrow</td></tr>
+        <tr><td><code>/parcours mark &lt;name&gt;</code></td><td>Record your position as the place of an NPC</td></tr>
+        <tr><td><code>/parcours export</code></td><td>Export recorded positions to share corrections</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <p class="note"><strong>Beta data.</strong> Quests come from the QuestieDB Forever database (GPL-3.0) and will be refreshed for launch on November 4, 2026. Found a wrong position? Use <code>/parcours export</code> and send the text to <a class="mail" data-mail href="#">LindaLunawow at gmail.com</a> or post it in the CurseForge comments. Luna's Parcours is released under GPL-3.0.</p>
+  </section>
+</div>
+</main>
+
+<dialog class="lightbox" id="lightbox" aria-label="Screenshot">
+  <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
+  <button class="btn btn-ghost close" type="button" id="lb-close">Close</button>
+</dialog>
+
+<footer>
+  <div class="wrap">
+    <p class="farewell">Might Luna guide you forward, always.</p>
+    <p>Contact: <a class="mail" data-mail href="#">LindaLunawow at gmail.com</a></p>
+    <p>Made by Priestael and Druidel LindaLuna. SmartHeal LindaLuna and Luna's Parcours are free fan-made addons, not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft is a trademark of Blizzard Entertainment, Inc.</p>
+  </div>
+</footer>
+
+<script>
+/* ---- Edit your links here ---- */
+const LINKS = {
+  paypal: "https://www.paypal.com/donate/?hosted_button_id=YOUR_BUTTON_ID",
+  "curse-smartheal": "https://www.curseforge.com/wow/addons/smartheal-lindaluna",
+  "curse-parcours": "https://www.curseforge.com/wow/addons/lunas-parcours"
+};
+/* Contact address, assembled here so simple spam bots don't read it from the page source */
+const MAIL = ["LindaLunawow", "gmail.com"].join("@");
+document.querySelectorAll("[data-mail]").forEach(a => { a.textContent = MAIL; a.href = "mailto:" + MAIL; });
+document.querySelectorAll("[data-copy-mail]").forEach(b => b.addEventListener("click", () => {
+  const done = () => { b.textContent = "Copied"; setTimeout(() => { b.textContent = "Copy address"; }, 2000); };
+  const pick = () => { const r = document.createRange(); r.selectNodeContents(b.parentElement.querySelector(".mail")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected: press copy"; };
+  try { navigator.clipboard.writeText(MAIL).then(done, pick); } catch (e) { pick(); }
+}));
+document.querySelectorAll("[data-link]").forEach(a => {
+  const url = LINKS[a.dataset.link];
+  if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+});
+
+/* ---- Views: #home, #smartheal, #parcours; other ids scroll inside home ---- */
+const VIEWS = ["home", "smartheal", "parcours"];
+function route() {
+  const id = (location.hash || "#home").slice(1);
+  let view = VIEWS.includes(id) ? id : null;
+  let target = null;
+  if (!view) {
+    target = document.getElementById(id);
+    const owner = target && target.closest(".view");
+    view = owner ? owner.id.replace("view-", "") : "home";
+  }
+  VIEWS.forEach(v => { document.getElementById("view-" + v).hidden = v !== view; });
+  const navKey = (id === "support" || id === "about") ? id : view;
+  document.querySelectorAll("[data-nav]").forEach(a => {
+    if (a.dataset.nav === navKey) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+  });
+  if (target && !VIEWS.includes(id)) target.scrollIntoView({ block: "start" });
+  else window.scrollTo(0, 0);
+}
+window.addEventListener("hashchange", route);
+route();
+
+/* ---- Screenshot lightbox ---- */
+(function () {
+  const dlg = document.getElementById("lightbox"), img = document.getElementById("lb-img"), cap = document.getElementById("lb-cap");
+  const close = () => { if (dlg.open) dlg.close(); };
+  document.querySelectorAll(".zoom").forEach(btn => btn.addEventListener("click", () => {
+    const src = btn.querySelector("img"), fc = btn.closest("figure").querySelector("figcaption");
+    img.src = src.src; img.alt = src.alt;
+    cap.textContent = fc ? fc.firstChild.textContent.trim() : "";
+    if (typeof dlg.showModal === "function") dlg.showModal(); else window.open(src.src, "_blank");
+  }));
+  img.addEventListener("click", close);
+  document.getElementById("lb-close").addEventListener("click", close);
+  dlg.addEventListener("click", e => { if (e.target === dlg) close(); });
+})();
+
+/* ---- Ambient sky: stars, drifting cloud wisps, rising motes ---- */
+(function () {
+  const c = document.getElementById("sky"), ctx = c.getContext("2d");
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w, h, dpr, stars = [], clouds = [], motes = [];
+  function size() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.clientWidth; h = c.clientHeight;
+    c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    stars = Array.from({ length: Math.round(w * h / 9000) }, () => ({ x: Math.random() * w, y: Math.random() * h * .55, r: Math.random() * 1.3 + .3, p: Math.random() * 6.28 }));
+    clouds = Array.from({ length: 6 }, (_, i) => ({ x: Math.random() * w, y: h * (.35 + i * .1), s: 120 + Math.random() * 220, v: .08 + Math.random() * .15 }));
+    motes = Array.from({ length: 26 }, () => ({ x: Math.random() * w, y: Math.random() * h, v: .15 + Math.random() * .35, r: Math.random() * 1.8 + .6 }));
+  }
+  function frame(t) {
+    ctx.clearRect(0, 0, w, h);
+    for (const s of stars) {
+      const a = .45 + .45 * Math.sin(t / 900 + s.p);
+      ctx.fillStyle = "rgba(234,242,255," + a.toFixed(2) + ")";
+      ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.28); ctx.fill();
+    }
+    for (const k of clouds) {
+      const g = ctx.createRadialGradient(k.x, k.y, 0, k.x, k.y, k.s);
+      g.addColorStop(0, "rgba(234,242,255,.07)"); g.addColorStop(1, "rgba(234,242,255,0)");
+      ctx.fillStyle = g; ctx.beginPath(); ctx.ellipse(k.x, k.y, k.s * 1.8, k.s * .5, 0, 0, 6.28); ctx.fill();
+      if (!still) { k.x += k.v; if (k.x - k.s * 1.8 > w) k.x = -k.s * 1.8; }
+    }
+    for (const m of motes) {
+      ctx.fillStyle = "rgba(243,201,92,.55)";
+      ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, 6.28); ctx.fill();
+      if (!still) { m.y -= m.v; m.x += Math.sin((t / 1400) + m.y / 60) * .2; if (m.y < -5) { m.y = h + 5; m.x = Math.random() * w; } }
+    }
+    if (!still) requestAnimationFrame(frame);
+  }
+  size(); window.addEventListener("resize", () => { size(); if (still) frame(0); });
+  still ? frame(0) : requestAnimationFrame(frame);
+})();
+</script>
+
+</body>
+</html>
