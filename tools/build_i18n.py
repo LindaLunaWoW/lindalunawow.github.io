@@ -385,9 +385,9 @@ T = [
  ('<td>Levels</td>', '<td>Livelli</td>', '<td>Niveaux</td>'),
  ('<td>Interface languages</td>', '<td>Lingue dell\'interfaccia</td>', '<td>Langues de l\'interface</td>'),
  ('<td>Luna\'s farewell</td>', '<td>L\'addio di Luna</td>', '<td>L\'adieu de Luna</td>'),
- ('* Luna\'s Journey stays silent when SmartHeal is installed, so you never get the same alert twice. The three addons work side by side.',
-  '* Luna\'s Journey resta in silenzio quando SmartHeal è installato, così non ricevi mai lo stesso avviso due volte. I tre addon funzionano fianco a fianco.',
-  '* Luna\'s Journey reste silencieux quand SmartHeal est installé : vous ne recevez jamais deux fois la même alerte. Les trois addons fonctionnent côte à côte.'),
+ ('* The gear pop-up never appears twice: Luna\'s Parcours stays silent when SmartHeal or Luna\'s Journey is installed, and Luna\'s Journey when SmartHeal is. The three addons work side by side.',
+  '* Il popup dell\'equipaggiamento non compare mai due volte: Luna\'s Parcours resta in silenzio se è installato SmartHeal o Luna\'s Journey, e Luna\'s Journey se è installato SmartHeal. I tre addon funzionano fianco a fianco.',
+  '* La fenêtre d\'équipement n\'apparaît jamais deux fois : Luna\'s Parcours reste silencieux si SmartHeal ou Luna\'s Journey est installé, et Luna\'s Journey si SmartHeal l\'est. Les trois addons fonctionnent côte à côte.'),
 
  # Journey page
  ('alt="Luna\'s Journey logo"', 'alt="Logo di Luna\'s Journey"', 'alt="Logo de Luna\'s Journey"'),
@@ -508,6 +508,15 @@ T = [
  ('<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Our best pick</span>',
   '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Il nostro preferito</span>',
   '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.6 7-6.2-3.7-6.2 3.7 1.6-7L2 9.2l7.1-.6z" fill="#2a1a00"/></svg>Notre coup de cœur</span>'),
+ # ---------- v7: latest builds ----------
+ ('<td>Gear scored for your class and specialisation</td>', '<td>Equipaggiamento valutato per classe e specializzazione</td>', '<td>Équipement évalué selon votre classe et spécialisation</td>'),
+ ('<td>Weapons you have not learned are flagged</td>', '<td>Armi non ancora imparate segnalate</td>', '<td>Armes pas encore apprises signalées</td>'),
+ ('<td>Not enough mana for a rank</td><td><strong>The best heal you can still pay for</strong>. Icons you cannot afford get a blue veil, like the game\'s action bars.</td>',
+  '<td>Mana insufficiente per un rango</td><td><strong>La cura migliore che puoi ancora permetterti</strong>. Le icone troppo costose hanno un velo blu, come nelle barre delle azioni del gioco.</td>',
+  '<td>Pas assez de mana pour un rang</td><td><strong>Le meilleur soin que vous pouvez encore payer</strong>. Les icônes trop chères ont un voile bleu, comme les barres d\'action du jeu.</td>'),
+ ('Gear is scored for your class and specialisation, weapon damage included. Weapons you have not learned yet are flagged, and when your bags hold something better than what you wear, a pop-up offers to equip it.',
+  'L\'equipaggiamento è valutato per la tua classe e specializzazione, danno delle armi compreso. Le armi che non hai ancora imparato sono segnalate, e quando nelle borse hai qualcosa di meglio di ciò che indossi, un popup ti propone di indossarlo.',
+  'L\'équipement est évalué selon votre classe et votre spécialisation, dégâts des armes compris. Les armes que vous n\'avez pas encore apprises sont signalées, et quand vos sacs contiennent mieux que ce que vous portez, une fenêtre vous propose de l\'équiper.'),
 ]
 
 src = open(SRC, encoding="utf-8").read()
