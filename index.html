@@ -250,6 +250,16 @@ dialog.lightbox .close{justify-self:center}
 .pair{display:flex;flex-wrap:wrap;gap:10px}
 .pair .chip b{color:var(--gold)}
 @media (max-width:760px){.about{grid-template-columns:1fr;justify-items:center}.about img{max-width:380px}}
+.lang-callout{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;padding:clamp(18px,3vw,28px);border-radius:var(--radius);
+  background:linear-gradient(120deg,rgba(79,169,230,.16),rgba(168,140,242,.14));border:1px solid rgba(79,169,230,.45)}
+.lang-callout svg{width:44px;height:44px;flex:none}
+.lang-callout .text{display:grid;gap:10px;min-width:0}
+.lang-callout p{color:var(--mist-dim);max-width:68ch}
+.lang-callout p strong{color:var(--mist)}
+.lang-callout .chips .chip.on{color:var(--sky-night);background:var(--gold);border-color:var(--gold)}
+.examples{display:flex;flex-wrap:wrap;gap:8px}
+.examples span{font-family:var(--f-voice);font-style:italic;padding:3px 10px;border-radius:8px;background:rgba(0,0,0,.25);border:1px solid rgba(234,242,255,.15);color:var(--mist)}
+@media (max-width:520px){.lang-callout{grid-template-columns:1fr}}
 footer{position:relative;z-index:1;border-top:1px solid var(--panel-line);background:rgba(11,16,54,.75)}
 footer .wrap{padding-block:28px;display:grid;gap:10px;color:var(--mist-dim);font-size:var(--step--1)}
 footer .farewell{font-size:1rem}
@@ -396,10 +406,23 @@ footer .farewell{font-size:1rem}
       <h1>SmartHeal LindaLuna</h1>
       <p class="tagline">The right heal, at the right rank, on the right target, at a glance.</p>
       <p class="lede">For every member of your party, SmartHeal lights up the spell and rank that fits right now: how much health is missing, how fast damage is coming in, and how long each heal takes to cast. It never casts anything by itself. You click, it shows you what makes sense.</p>
-      <div class="chips"><span class="chip">Party up to 5</span><span class="chip">11 client languages</span><span class="chip">Secret-values safe</span><span class="chip">Never auto-casts</span></div>
+      <div class="chips"><span class="chip">Party up to 5</span><span class="chip">11 languages · spell names from your client</span><span class="chip">Secret-values safe</span><span class="chip">Never auto-casts</span></div>
       <div class="btn-row">
         <a class="btn btn-gold" data-link="curse-smartheal" href="#">Download on CurseForge</a>
         <a class="btn btn-ghost" href="#sh-howto">How to use it</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="sh-lang">
+    <div class="lang-callout">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#4fa9e6" stroke-width="3"/><path d="M4 24h40M24 4c7 6 7 34 0 40M24 4c-7 6-7 34 0 40" fill="none" stroke="#4fa9e6" stroke-width="2.5"/><circle cx="36" cy="12" r="6" fill="#f3c95c"/></svg>
+      <div class="text">
+        <h2 id="sh-lang">Speaks your language</h2>
+        <p><strong>Spell names come straight from your game client</strong>, so every icon and tooltip matches your own spellbook. Talents are recognised by name in every client language, and healing values are read from your real tooltips, whatever language you play in.</p>
+        <div class="examples"><span>Renew</span><span>Erneuerung</span><span>Rénovation</span><span>恢复</span></div>
+        <p>The whole interface follows your client automatically: frame, options, tooltips, chat output, the gear pop-up and the party messages. The only exception is Luna's farewell, which keeps its original English words.</p>
+        <div class="chips"><span class="chip on">Italiano</span><span class="chip">English</span><span class="chip">Deutsch</span><span class="chip">Français</span><span class="chip">Español (EU)</span><span class="chip">Español (AL)</span><span class="chip">Português</span><span class="chip">Русский</span><span class="chip">한국어</span><span class="chip">简体中文</span><span class="chip">繁體中文</span></div>
       </div>
     </div>
   </section>
@@ -518,10 +541,22 @@ footer .farewell{font-size:1rem}
       <h1>Luna's Parcours</h1>
       <p class="tagline">Pick what you want. Get the shortest route to it. Follow the arrow.</p>
       <p class="lede">Choose your goals: quest reward items, professions, long quest chains, hidden quests. Luna's Parcours builds one route that collects them all in the best order, and an arrow under your character leads you to every quest giver, objective and turn-in. It never plays for you; it only shows the way.</p>
-      <div class="chips"><span class="chip">Human · Dwarf · Night Elf · Gnome · Skyborne</span><span class="chip">Zephras Isle, both factions</span><span class="chip">1132 quests · 28 zones</span><span class="chip">5 languages</span></div>
+      <div class="chips"><span class="chip">Human · Dwarf · Night Elf · Gnome · Skyborne</span><span class="chip">Zephras Isle, both factions</span><span class="chip">1132 quests · 28 zones</span><span class="chip">Names in your client's language</span></div>
       <div class="btn-row">
         <a class="btn btn-gold" data-link="curse-parcours" href="#">Download on CurseForge</a>
         <a class="btn btn-ghost" href="#pc-howto">How to use it</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="pc-lang">
+    <div class="lang-callout">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#4fa9e6" stroke-width="3"/><path d="M4 24h40M24 4c7 6 7 34 0 40M24 4c-7 6-7 34 0 40" fill="none" stroke="#4fa9e6" stroke-width="2.5"/><circle cx="36" cy="12" r="6" fill="#f3c95c"/></svg>
+      <div class="text">
+        <h2 id="pc-lang">Speaks your language</h2>
+        <p><strong>Quest titles, item and weapon names, zones and NPCs come straight from your game client.</strong> What you read on the route is exactly what you read in your quest log, your bags and on the map, so you never have to translate a guide in your head.</p>
+        <p>The addon's own interface is available in five languages, chosen in the options. Everything that belongs to the game always follows your client.</p>
+        <div class="chips"><span class="chip on">Italiano</span><span class="chip">English</span><span class="chip">Français</span><span class="chip">Deutsch</span><span class="chip">Español</span></div>
       </div>
     </div>
   </section>
