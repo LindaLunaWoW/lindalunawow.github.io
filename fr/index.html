@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="SmartHeal LindaLuna et Luna's Parcours : des addons gratuits pour WoW Forever, créés en mémoire de Luna.">
+<meta name="description" content="SmartHeal LindaLuna, Luna's Parcours et Luna's Journey : des addons gratuits pour WoW Forever, créés en mémoire de Luna.">
 <link rel="alternate" hreflang="en" href="https://lindalunawow.github.io/en/">
 <link rel="alternate" hreflang="it" href="https://lindalunawow.github.io/it/">
 <link rel="alternate" hreflang="fr" href="https://lindalunawow.github.io/fr/">
@@ -76,6 +76,22 @@ p{margin:0}
 .lang-switch a:hover{color:var(--mist);background:rgba(255,255,255,.06)}
 .lang-switch a[aria-current="true"]{color:var(--sky-night);background:var(--sky-azure)}
 
+img{height:auto}
+.btn-soon{background:rgba(255,255,255,.06);border:1px dashed rgba(243,201,92,.6);color:var(--gold);cursor:default}
+.btn-soon:hover{transform:none}
+.compare th:not(:first-child),.compare td:not(:first-child){text-align:center;white-space:nowrap}
+.compare thead th{font-family:var(--f-display);font-size:.95rem;letter-spacing:.02em;text-transform:none;color:var(--gold)}
+.compare thead th span{display:block;font-family:var(--f-body);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sky-azure);margin-top:2px}
+.compare td:first-child{color:var(--mist)}
+.compare .yes{color:var(--hot);font-weight:700;font-size:1.15rem}
+.compare .no{color:rgba(183,196,230,.45)}
+.compare .val{color:var(--mist);font-weight:700}
+.compare{min-width:0}
+@media (max-width:640px){.compare th,.compare td{padding:10px 6px;font-size:.88rem}.compare thead th{font-size:.8rem}.compare thead th span{font-size:.62rem;letter-spacing:.06em}.nav{position:static}}
+section[id],.view section{scroll-margin-top:84px}
+.table-note{margin-top:10px;color:var(--mist-dim);font-size:var(--step--1)}
+.data-line{display:inline-block;margin-top:12px;padding:6px 12px;border-radius:999px;background:rgba(0,0,0,.25);border:1px solid rgba(234,242,255,.15);color:var(--mist-dim);font-size:var(--step--1)}
+
 /* buttons */
 .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--f-body);font-weight:700;font-size:1rem;text-decoration:none;
   padding:11px 20px;border-radius:999px;border:1px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease}
@@ -138,7 +154,7 @@ section + section{margin-top:clamp(48px,7vw,88px)}
 .tagline{font-family:var(--f-voice);font-style:italic;font-size:var(--step-1);color:var(--mist)}
 .chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{font-size:var(--step--1);font-weight:700;padding:4px 12px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(234,242,255,.18);color:var(--mist-dim)}
-@media (max-width:640px){.page-head{grid-template-columns:1fr}.page-head img{max-width:220px}}
+@media (max-width:640px){.page-head{grid-template-columns:1fr}.page-head img{width:100%;max-width:440px;justify-self:center}}
 
 .sec-head{display:grid;gap:8px;margin-bottom:22px}
 .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px}
@@ -289,6 +305,7 @@ footer .farewell{font-size:1rem}
       <a href="#home" data-nav="home">Accueil</a>
       <a href="#smartheal" data-nav="smartheal">SmartHeal</a>
       <a href="#parcours" data-nav="parcours">Luna's Parcours</a>
+      <a href="#journey" data-nav="journey">Luna's Journey</a>
       <a href="#about" data-nav="about">Qui sommes-nous</a>
       <a href="#support" data-nav="support">Soutenir</a>
     </div>
@@ -304,7 +321,7 @@ footer .farewell{font-size:1rem}
   <section class="hero">
     <span class="eyebrow">Addons gratuits pour WoW Forever</span>
     <h1>LindaLuna</h1>
-    <p class="lede">Deux addons créés par un Prêtre et un Druide qui jouent côte à côte. L'un garde votre groupe en vie, l'autre vous guide sur le chemin le plus court. Tous deux portent le nom de Luna.</p>
+    <p class="lede">Trois addons créés par un Prêtre et un Druide qui jouent côte à côte. L'un garde votre groupe en vie, l'autre vous mène par le chemin le plus court vers ce que vous voulez, et le troisième vous accompagne dans chaque quête. Tous trois portent le nom de Luna.</p>
     <svg class="islands" viewBox="0 0 560 120" aria-hidden="true">
       <defs>
         <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a5a9e"/><stop offset="1" stop-color="#241d55"/></linearGradient>
@@ -351,7 +368,38 @@ footer .farewell{font-size:1rem}
           <span class="go">Découvrir Luna's Parcours →</span>
         </div>
       </a>
+      <a class="addon-card" href="#journey">
+        <img src="../assets/lunas-journey.webp" alt="Logo de Luna's Journey : un chat bengal voyageur devant un globe avec un chemin d'empreintes et une liste de contrôle" width="720" height="720">
+        <div class="body">
+          <span class="who">Complétionniste · tous niveaux</span>
+          <h3>Luna's Journey</h3>
+          <p>Chaque quête que votre personnage peut faire, zone par zone, dans l'ordre le plus court. Chaque quête passée a une raison.</p>
+          <span class="go">Découvrir Luna's Journey →</span>
+        </div>
+      </a>
     </div>
+  </section>
+
+  <section aria-labelledby="compare-h" id="compare">
+    <div class="sec-head"><span class="eyebrow">Comparer</span><h2 id="compare-h">Quel addon est fait pour vous ?</h2></div>
+    <div class="table-wrap"><table class="compare">
+      <thead><tr><th scope="col"></th><th scope="col">SmartHeal<span>Soins</span></th><th scope="col">Parcours<span>Objectifs</span></th><th scope="col">Journey<span>Chaque quête</span></th></tr></thead>
+      <tbody>
+        <tr><td>Soins suggérés pour Prêtre et Druide</td><td><span class="yes">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
+        <tr><td>Messages au groupe et touches au survol</td><td><span class="yes">✓</span></td><td><span class="no">—</span></td><td><span class="no">—</span></td></tr>
+        <tr><td>Flèche GPS entre zones, bateaux et vols</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Itinéraire de quêtes le plus court</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Choisir vos objectifs : objets, métiers, chaînes, secrets</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
+        <tr><td>Chaque quête, avec une raison pour chaque quête passée</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Barre de progression pour chaque zone et métier</td><td><span class="no">—</span></td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Récompenses que votre personnage peut porter</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Fenêtre d'équipement meilleur</td><td><span class="yes">✓</span></td><td><span class="no">—</span></td><td><span class="yes">✓*</span></td></tr>
+        <tr><td>Niveaux</td><td><span class="val">1–60</span></td><td><span class="val">1–30</span></td><td><span class="val">1–60</span></td></tr>
+        <tr><td>Langues de l'interface</td><td><span class="val">11</span></td><td><span class="val">5</span></td><td><span class="val">5</span></td></tr>
+        <tr><td>L'adieu de Luna</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="table-note">* Luna's Journey reste silencieux quand SmartHeal est installé : vous ne recevez jamais deux fois la même alerte. Les trois addons fonctionnent côte à côte.</p>
   </section>
 
   <section aria-labelledby="luna-h">
@@ -367,7 +415,7 @@ footer .farewell{font-size:1rem}
         <span class="eyebrow">En mémoire de Luna</span>
         <h2 id="luna-h">Elle a marché à nos côtés sur chaque route</h2>
         <p class="story">Luna a été la meilleure compagne et aventurière que Priestael et son frère Druidel LindaLuna aient jamais eue. Elle était avec nous dans chaque forêt et chaque tempête. Aujourd'hui sa lumière brille d'en haut, comme la lune au-dessus de Teldrassil, et nous montre le chemin quand la route s'assombrit.</p>
-        <p class="small">Chaque soin lancé avec SmartHeal et chaque itinéraire tracé par Luna's Parcours porte un peu de son courage. Si vous avez vous aussi perdu un compagnon, nous espérons que ces addons garderont une petite lumière allumée pour vous. Qu'Élune veille sur nous tous.</p>
+        <p class="small">Chaque soin lancé avec SmartHeal, chaque itinéraire tracé par Luna's Parcours et chaque quête terminée avec Luna's Journey porte un peu de son courage. Si vous avez vous aussi perdu un compagnon, nous espérons que ces addons garderont une petite lumière allumée pour vous. Qu'Élune veille sur nous tous.</p>
         <p class="farewell">Might Luna guide you forward, always.</p>
       </div>
     </div>
@@ -380,7 +428,7 @@ footer .farewell{font-size:1rem}
         <span class="eyebrow">Qui sommes-nous</span>
         <h2 id="about-h">Un Prêtre, un Druide et Luna</h2>
         <p class="first">Nous sommes Priestael et Druidel LindaLuna, deux frères qui montent en niveau côte à côte dans WoW Forever. L'un soigne avec la Lumière, l'autre avec la nature.</p>
-        <p>Nous avons créé SmartHeal et Luna's Parcours parce que nous les voulions pour nous : le bon soin au bon moment, et le chemin le plus court vers l'équipement que nous cherchions. Nous testons chaque version dans la bêta avec nos propres personnages avant qu'elle ne vous parvienne.</p>
+        <p>Nous avons créé SmartHeal, Luna's Parcours et Luna's Journey parce que nous les voulions pour nous : le bon soin au bon moment, le chemin le plus court vers l'équipement que nous cherchions, et chaque quête de chaque zone sans perdre une soirée. Nous testons chaque version dans la bêta avec nos propres personnages avant qu'elle ne vous parvienne.</p>
         <p>Luna marche devant, comme elle l'a toujours fait.</p>
         <div class="pair"><span class="chip"><b>Priestael</b> · Prêtre</span><span class="chip"><b>Druidel LindaLuna</b> · Druide</span><span class="chip"><b>Luna</b> · ouvre la voie</span></div>
         <div class="btn-row"><a class="btn btn-ghost" href="#support">Soutenez-nous ou écrivez-nous</a></div>
@@ -393,7 +441,7 @@ footer .farewell{font-size:1rem}
       <div class="text">
         <span class="eyebrow">Gratuits, aujourd'hui et pour toujours</span>
         <h2 id="support-h">Soutenir le projet</h2>
-        <p class="lede">Les deux addons sont gratuits et le resteront. S'ils sauvent votre partie, un petit don nous aide à les maintenir à jour à chaque patch de WoW Forever.</p>
+        <p class="lede">Les trois addons sont gratuits et le resteront. S'ils sauvent votre partie, un petit don nous aide à les maintenir à jour à chaque patch de WoW Forever.</p>
       </div>
       <a class="btn btn-gold" data-link="paypal" href="#">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9C1.2 8.9 3 5 6.6 5c2 0 3.4 1.2 4.1 2.4h.6C12 6.2 13.4 5 15.4 5 19 5 20.8 8.9 19.3 12 17 16.6 12 21 12 21z" fill="currentColor"/></svg>
@@ -552,9 +600,9 @@ footer .farewell{font-size:1rem}
       <h1>Luna's Parcours</h1>
       <p class="tagline">Choisissez ce que vous voulez. Obtenez le chemin le plus court. Suivez la flèche.</p>
       <p class="lede">Choisissez vos objectifs : récompenses de quête, métiers, longues chaînes de quêtes, quêtes cachées. Luna's Parcours construit un seul itinéraire qui les réunit tous dans le meilleur ordre, et une flèche sous votre personnage vous mène à chaque donneur de quête, objectif et rendu. Il ne joue jamais à votre place : il montre seulement le chemin.</p>
-      <div class="chips"><span class="chip">Humain · Nain · Elfe de la nuit · Gnome · Skyborne</span><span class="chip">Zephras Isle, les deux factions</span><span class="chip">1132 quêtes · 28 zones</span><span class="chip">Noms dans la langue de votre client</span></div>
+      <div class="chips"><span class="chip">Humain · Nain · Elfe de la nuit · Gnome · Skyborne</span><span class="chip">Zephras Isle, les deux factions</span><span class="chip">1170 quêtes · 28 zones</span><span class="chip">Noms dans la langue de votre client</span></div>
       <div class="btn-row">
-        <a class="btn btn-gold" data-link="curse-parcours" href="#">Télécharger sur CurseForge</a>
+        <span class="btn btn-soon">Bientôt sur CurseForge</span>
         <a class="btn btn-ghost" href="#pc-howto">Mode d'emploi</a>
       </div>
     </div>
@@ -664,6 +712,98 @@ footer .farewell{font-size:1rem}
     <p class="note"><strong>Données de la bêta.</strong> Les quêtes viennent de la base QuestieDB Forever (GPL-3.0) et seront mises à jour pour le lancement du 4 novembre 2026. Une position erronée ? Utilisez <code>/parcours export</code> et envoyez le texte à <a class="mail" data-mail href="#">LindaLunawow at gmail.com</a> ou publiez-le dans les commentaires CurseForge. Luna's Parcours est distribué sous licence GPL-3.0.</p>
   </section>
 </div>
+
+<!-- ================= LUNA'S JOURNEY ================= -->
+<div class="view wrap" id="view-journey" hidden>
+  <section class="page-head">
+    <img src="../assets/lunas-journey.webp" alt="Logo de Luna's Journey" width="720" height="720">
+    <div class="text">
+      <span class="eyebrow">Guide complétionniste · tous niveaux</span>
+      <h1>Luna's Journey</h1>
+      <p class="tagline">Chaque quête. Chaque zone. Aucun temps perdu.</p>
+      <p class="lede">Luna's Journey vous guide dans chaque quête que votre personnage peut faire, zone par zone, dans l'ordre le plus court : prises ensemble, faites ensemble, rendues ensemble. Quand vous en passez une, vous dites pourquoi. Quand une quête donne un équipement intéressant, vous le savez avant de l'accepter. Il ne joue jamais à votre place : il montre seulement le chemin.</p>
+      <div class="chips"><span class="chip">2656 quêtes · tous niveaux</span><span class="chip">Chaque quête passée a une raison</span><span class="chip">Names in your client's language</span></div>
+      <div class="btn-row">
+        <span class="btn btn-soon">Bientôt sur CurseForge</span>
+        <a class="btn btn-ghost" href="#lj-howto">Mode d'emploi</a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lj-lang">
+    <div class="lang-callout">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#4fa9e6" stroke-width="3"/><path d="M4 24h40M24 4c7 6 7 34 0 40M24 4c-7 6-7 34 0 40" fill="none" stroke="#4fa9e6" stroke-width="2.5"/><circle cx="36" cy="12" r="6" fill="#f3c95c"/></svg>
+      <div class="text">
+        <h2 id="lj-lang">Parle votre langue</h2>
+        <p><strong>Les titres des quêtes, les noms des objets et des armes, les zones et les PNJ viennent directement de votre client de jeu.</strong> Ce que vous lisez dans l'itinéraire est exactement ce que vous lisez dans votre journal de quêtes, vos sacs et sur la carte : plus besoin de traduire un guide dans votre tête.</p>
+        <p>L'interface de l'addon existe en cinq langues, à choisir dans les options. Tout ce qui appartient au jeu suit toujours votre client.</p>
+        <div class="chips"><span class="chip on">Français</span><span class="chip">English</span><span class="chip">Deutsch</span><span class="chip">Italiano</span><span class="chip">Español</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lj-who">
+    <div class="sec-head"><span class="eyebrow">Pour qui</span><h2 id="lj-who">Fait pour deux types de joueurs</h2></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Complétionnistes</h3><p>Vous voulez toute l'histoire de chaque zone, quêtes grises comprises, pas seulement l'XP la plus rapide. Chaque quête faisable est dans la liste, rien ne disparaît en silence, et une barre de progression par zone et par métier montre à quel point votre voyage est vraiment complet.</p></div>
+      <div class="feat"><h3>Parents occupés</h3><p>Vous avez une heure une fois les enfants couchés et vous ne voulez pas la passer sur un site de quêtes. L'itinéraire le plus court est déjà prêt, vous pouvez vous arrêter et reprendre quand vous voulez, même des jours plus tard, et la flèche vous y mène.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lj-what">
+    <div class="sec-head"><span class="eyebrow">Fonctions</span><h2 id="lj-what">Tout le voyage, en un coup d'œil</h2></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Onglet Voyage</h3><p>Vos zones avec une barre de progression : faites, passées par vous, justifiées, en attente de niveau, à faire. Appuyez sur <span class="k">Commencer le voyage</span> et l'itinéraire le plus court est construit avec chaque quête faisable maintenant. Il est recalculé à chaque niveau.</p></div>
+      <div class="feat"><h3>Chaque quête passée a une raison</h3><p>Passer demande pourquoi : élite ou groupe, donjon, réputation, cassée ou introuvable, mon choix. D'autres quêtes sont justifiées automatiquement, par exemple un métier que vous n'avez pas appris. Vous pouvez les rétablir ou les ajouter à tout moment.</p></div>
+      <div class="feat"><h3>Onglet Équipement</h3><p>Chaque récompense que votre personnage peut porter, avec le gain par rapport à ce que vous portez. Les pondérations derrière le score sont affichées clairement. Cochez un objet et sa chaîne de quêtes passe en tête de l'itinéraire.</p></div>
+      <div class="feat"><h3>Plus facile en groupe</h3><p>Une étiquette <span class="k">[2+]</span> signale les quêtes plus faciles entre amis : étiquette de groupe du jeu, ennemis élites ou nombreux ennemis autour de l'objectif. Les quêtes élites restent dans le voyage : c'est vous qui décidez.</p></div>
+      <div class="feat"><h3>Métiers</h3><p>Cuisine, Pêche et Secourisme font toujours partie du voyage. Tout autre métier s'ajoute dès que vous l'apprenez, et les quêtes qui demandent une compétence plus élevée attendent que vous l'atteigniez.</p></div>
+      <div class="feat"><h3>Avec les autres addons de Luna</h3><p>Installez-le à côté de Luna's Parcours et de SmartHeal LindaLuna. Réglages et flèche restent séparés, et les alertes d'équipement et l'adieu de Luna ne sont jamais doublés.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lj-data">
+    <div class="sec-head"><span class="eyebrow">Données de la bêta</span><h2 id="lj-data">Des données marquées honnêtement</h2>
+      <p class="lede">WoW Forever est en bêta jusqu'au lancement du 4 novembre 2026. Chaque quête est marquée comme vue en jeu pendant la bêta, présente sur Wowhead Forever ou seulement Classic. La bêta s'arrête au niveau 30 : au-delà, la plupart des quêtes sont encore celles de Classic reportées sur Forever. Elles seront confirmées après le lancement.</p></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Niveaux</th><th>Quêtes</th><th>Vues en jeu</th><th>Wowhead Forever</th><th>Classic seulement</th></tr></thead>
+      <tbody>
+        <tr><td>1–10</td><td>442</td><td>204</td><td>16</td><td>222</td></tr>
+        <tr><td>11–20</td><td>377</td><td>98</td><td>16</td><td>263</td></tr>
+        <tr><td>21–30</td><td>294</td><td>22</td><td>9</td><td>263</td></tr>
+        <tr><td>31–40</td><td>311</td><td>3</td><td>1</td><td>307</td></tr>
+        <tr><td>41–50</td><td>276</td><td>0</td><td>0</td><td>276</td></tr>
+        <tr><td>51–60</td><td>956</td><td>10</td><td>145</td><td>801</td></tr>
+      </tbody>
+    </table></div>
+    <p class="data-line">Données du 10 octobre 2026 · QuestieDB Forever · mises à jour chaque semaine jusqu'au lancement</p>
+  </section>
+
+  <section aria-labelledby="lj-howto-h" id="lj-howto">
+    <div class="sec-head"><span class="eyebrow">Mode d'emploi</span><h2 id="lj-howto-h">De la première zone à la dernière quête</h2></div>
+    <ol class="steps">
+      <li><div class="c"><h3>Installer et ouvrir</h3><p>Extrayez dans <code>Interface/AddOns/</code> dans un dossier nommé <code>LunasJourney</code>. Ouvrez avec le bouton de la minicarte (la lune et les empreintes), <code>/journey</code> ou <code>/lj</code>.</p></div></li>
+      <li><div class="c"><h3>Vérifier vos zones</h3><p>Dans l'onglet <strong>Voyage</strong>, la zone où vous êtes est toujours incluse. Utilisez <strong>Zones…</strong> pour anticiper.</p></div></li>
+      <li><div class="c"><h3>Commencer le voyage</h3><p>Appuyez sur <strong>Commencer le voyage</strong>. L'onglet <strong>Itinéraire</strong> s'ouvre avec l'étape à faire et les cinq suivantes.</p></div></li>
+      <li><div class="c"><h3>Suivre la flèche</h3><p>La plupart des étapes se valident toutes seules. Utilisez <strong>Passer</strong> (il demande pourquoi), <strong>Fait</strong> ou <strong>Retour</strong> au besoin.</p></div></li>
+      <li><div class="c"><h3>Choisir votre équipement</h3><p>Ouvrez de temps en temps l'onglet <strong>Équipement</strong> et cochez les objets que vous voulez en premier.</p></div></li>
+    </ol>
+    <div class="table-wrap" style="margin-top:18px"><table>
+      <thead><tr><th>Commande</th><th>Ce qu'elle fait</th></tr></thead>
+      <tbody>
+        <tr><td><code>/journey</code> ou <code>/lj</code></td><td>Ouvre ou ferme la fenêtre</td></tr>
+        <tr><td><code>/journey start</code></td><td>Commence ou recalcule le voyage</td></tr>
+        <tr><td><code>/journey gear</code></td><td>Ouvre l'onglet Équipement</td></tr>
+        <tr><td><code>/journey arrow</code></td><td>Affiche ou masque la flèche</td></tr>
+        <tr><td><code>/journey export</code></td><td>Exporte les positions enregistrées pour partager des corrections</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section>
+    <p class="note"><strong>Un voyage que nous partageons encore.</strong> Luna est partie pour son propre voyage. Chaque quête terminée avec cet addon est une étape du voyage que nous partageons encore avec elle. Les données des quêtes viennent de QuestieDB (GPL-3.0) ; Luna's Journey est distribué sous licence GPL-3.0.</p>
+  </section>
+</div>
 </main>
 
 <dialog class="lightbox" id="lightbox" aria-label="Capture d'écran">
@@ -675,7 +815,7 @@ footer .farewell{font-size:1rem}
   <div class="wrap">
     <p class="farewell">Might Luna guide you forward, always.</p>
     <p>Contact : <a class="mail" data-mail href="#">LindaLunawow at gmail.com</a></p>
-    <p>Créé par Priestael et Druidel LindaLuna. SmartHeal LindaLuna et Luna's Parcours sont des addons gratuits créés par des fans, ni affiliés ni approuvés par Blizzard Entertainment. World of Warcraft est une marque de Blizzard Entertainment, Inc.</p>
+    <p>Créé par Priestael et Druidel LindaLuna. SmartHeal LindaLuna, Luna's Parcours et Luna's Journey sont des addons gratuits créés par des fans, ni affiliés ni approuvés par Blizzard Entertainment. World of Warcraft est une marque de Blizzard Entertainment, Inc.</p>
   </div>
 </footer>
 
@@ -684,7 +824,8 @@ footer .farewell{font-size:1rem}
 const LINKS = {
   paypal: "https://www.paypal.com/donate/?business=LindaLunawow%40gmail.com&item_name=Support+SmartHeal+LindaLuna+and+Luna%27s+Parcours&currency_code=EUR&no_recurring=0",
   "curse-smartheal": "https://www.curseforge.com/wow/addons/smartheal-lindaluna",
-  "curse-parcours": "https://www.curseforge.com/wow/addons/lunas-parcours"
+  "curse-parcours": null, /* not approved yet */
+  "curse-journey": null   /* not published yet */
 };
 /* Contact address, assembled here so simple spam bots don't read it from the page source */
 const MAIL = ["LindaLunawow", "gmail.com"].join("@");
@@ -709,7 +850,7 @@ document.querySelectorAll("[data-link]").forEach(a => {
 })();
 
 /* ---- Views: #home, #smartheal, #parcours; other ids scroll inside home ---- */
-const VIEWS = ["home", "smartheal", "parcours"];
+const VIEWS = ["home", "smartheal", "parcours", "journey"];
 function route() {
   const id = (location.hash || "#home").slice(1);
   let view = VIEWS.includes(id) ? id : null;
