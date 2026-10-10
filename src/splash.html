@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LindaLuna Addons</title>
+<meta name="description" content="SmartHeal LindaLuna, Luna's Parcours and Luna's Journey: free addons for WoW Forever, made in memory of Luna. English · Français · Italiano.">
+<link rel="alternate" hreflang="en" href="https://lindalunawow.github.io/en/">
+<link rel="alternate" hreflang="fr" href="https://lindalunawow.github.io/fr/">
+<link rel="alternate" hreflang="it" href="https://lindalunawow.github.io/it/">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Alegreya:ital,wght@1,400&family=Alegreya+Sans:wght@500;700&display=swap">
+<style>
+/* Entrance: the three companions under a dusk sky, then three doors — one per language. */
+:root{
+  --sky-night:#0b1036; --sky-mid:#1d3586; --azure:#4fa9e6; --gold:#f3c95c; --gold-deep:#b9862a;
+  --mist:#eaf2ff; --mist-dim:#b7c4e6; --panel:rgba(14,22,66,.72); --line:rgba(243,201,92,.35);
+  --f-display:"Cinzel","Trajan Pro","Times New Roman",serif;
+  --f-body:"Alegreya Sans","Segoe UI",system-ui,sans-serif;
+  --f-voice:"Alegreya",Georgia,serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0;font-family:var(--f-body);color:var(--mist);background:var(--sky-night);
+  background-image:radial-gradient(120% 60% at 50% 105%,rgba(247,178,103,.38),transparent 60%),linear-gradient(180deg,var(--sky-night) 0%,#15215e 40%,var(--sky-mid) 75%,#2f4fa6 100%);
+  background-attachment:fixed}
+#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main{position:relative;z-index:1;min-height:100vh;display:grid;justify-items:center;align-content:start;padding-inline:16px;padding-block:24px 40px}
+.gate{width:min(560px,100%);display:grid;gap:18px;justify-items:center;text-align:center}
+.emblem{width:min(380px,78vw);height:auto;max-width:100%;filter:drop-shadow(0 22px 50px rgba(3,6,30,.7));animation:float 8s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-6px)}}
+h1{margin:0;font-family:var(--f-display);font-weight:900;font-size:clamp(2.2rem,1.6rem + 3vw,3.6rem);letter-spacing:.05em;
+  background:linear-gradient(180deg,#fff3c8 0%,var(--gold) 50%,var(--gold-deep) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 0 rgba(10,15,43,.6))}
+.sub{margin:0;color:var(--mist-dim);font-size:1.05rem}
+.prompt{margin:6px 0 0;font-size:.85rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--azure)}
+.doors{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%}
+@media (max-width:440px){.door{padding:12px 6px 10px}.door .code{font-size:1.3rem}.door .name{font-size:.95rem}}
+.door{display:grid;gap:4px;justify-items:center;text-decoration:none;color:var(--mist);padding:16px 10px 14px;border-radius:16px;
+  background:var(--panel);border:1px solid var(--line);box-shadow:0 12px 30px rgba(3,6,30,.45);transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease}
+.door:hover,.door:focus-visible{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 40px rgba(3,6,30,.6),0 0 0 1px var(--gold);outline:none}
+.door .code{font-family:var(--f-display);font-weight:900;font-size:1.6rem;color:var(--gold);letter-spacing:.06em}
+.door .name{font-weight:700;font-size:1.05rem}
+.door .enter{font-size:.85rem;color:var(--mist-dim)}
+.door.suggested{border-color:var(--azure);background:linear-gradient(180deg,rgba(79,169,230,.22),var(--panel))}
+.intro{margin:0;font-family:var(--f-voice);font-style:italic;font-size:1.12rem;line-height:1.55;color:var(--mist);max-width:46ch;min-height:5em;transition:opacity .2s ease}
+.donate{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:.98rem;padding:10px 20px;border-radius:999px;color:#2a1a00;
+  background:linear-gradient(180deg,#ffe08a,var(--gold) 45%,var(--gold-deep));box-shadow:0 4px 18px rgba(243,201,92,.35),inset 0 1px 0 rgba(255,255,255,.6);transition:transform .15s ease}
+.donate:hover,.donate:focus-visible{transform:translateY(-1px);outline:2px solid var(--azure);outline-offset:3px}
+.free{margin:0;color:var(--mist-dim);font-size:.9rem}
+.farewell{margin:10px 0 0;font-family:var(--f-voice);font-style:italic;color:var(--gold);font-size:1.1rem}
+.legal{margin:0;color:var(--mist-dim);font-size:.8rem;max-width:52ch}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="sky" aria-hidden="true"></canvas>
+<main>
+  <div class="gate">
+    <h1>LindaLuna</h1>
+    <p class="prompt">Choose your language · Choisissez votre langue · Scegli la lingua</p>
+    <nav class="doors" aria-label="Language">
+      <a class="door" href="en/" hreflang="en" lang="en" data-lang="en"><span class="code">EN</span><span class="name">English</span><span class="enter">Enter</span></a>
+      <a class="door" href="fr/" hreflang="fr" lang="fr" data-lang="fr"><span class="code">FR</span><span class="name">Français</span><span class="enter">Entrer</span></a>
+      <a class="door" href="it/" hreflang="it" lang="it" data-lang="it"><span class="code">IT</span><span class="name">Italiano</span><span class="enter">Entra</span></a>
+    </nav>
+    <img class="emblem" src="assets/the-makers.webp" alt="A Priest and a Night Elf Druid walking behind Luna, a Bengal cat adventurer, with a quest map at their feet" width="900" height="900">
+    <p class="sub">SmartHeal LindaLuna · Luna's Parcours · Luna's Journey</p>
+    <p class="intro" id="intro" aria-live="polite">We are Priestael and Druidel LindaLuna, two brothers who play WoW Forever side by side. We made three free addons, SmartHeal, Luna's Parcours and Luna's Journey, and dedicated them to Luna, the companion who walked every road with us.</p>
+    <p class="free">Free addons · Addons gratuits · Addon gratuiti</p>
+    <a class="donate" href="https://www.paypal.com/donate/?business=LindaLunawow%40gmail.com&amp;item_name=Support+SmartHeal+LindaLuna+and+Luna%27s+Parcours&amp;currency_code=EUR&amp;no_recurring=0" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.4-9.3-9C1.2 8.9 3 5 6.6 5c2 0 3.4 1.2 4.1 2.4h.6C12 6.2 13.4 5 15.4 5 19 5 20.8 8.9 19.3 12 17 16.6 12 21 12 21z" fill="currentColor"/></svg>
+      Donate · Faire un don · Dona
+    </a>
+    <p class="farewell">Might Luna guide you forward, always.</p>
+    <p class="legal">Free fan-made addons for WoW Forever, not affiliated with Blizzard Entertainment.</p>
+  </div>
+</main>
+<script>
+/* Highlight the visitor's browser language and show the intro in it; hovering a door shows the intro in that language.
+   Any #page in the address is kept (old links like /#smartheal still work). */
+(function () {
+  const INTRO = {
+    en: "We are Priestael and Druidel LindaLuna, two brothers who play WoW Forever side by side. We made three free addons, SmartHeal, Luna's Parcours and Luna's Journey, and dedicated them to Luna, the companion who walked every road with us.",
+    fr: "Nous sommes Priestael et Druidel LindaLuna, deux frères qui jouent à WoW Forever côte à côte. Nous avons créé trois addons gratuits, SmartHeal, Luna's Parcours et Luna's Journey, et nous les avons dédiés à Luna, la compagne qui a parcouru chaque route avec nous.",
+    it: "Siamo Priestael e Druidel LindaLuna, due fratelli che giocano a WoW Forever fianco a fianco. Abbiamo creato tre addon gratuiti, SmartHeal, Luna's Parcours e Luna's Journey, e li abbiamo dedicati a Luna, la compagna che ha percorso ogni strada con noi."
+  };
+  const intro = document.getElementById("intro");
+  const langs = (navigator.languages || [navigator.language || "en"]).map(l => String(l).slice(0, 2).toLowerCase());
+  const pick = langs.find(l => INTRO[l]) || "en";
+  const show = l => { intro.textContent = INTRO[l]; intro.lang = l; };
+  show(pick);
+  document.querySelectorAll(".door").forEach(a => {
+    if (a.dataset.lang === pick) a.classList.add("suggested");
+    if (location.hash) a.href = a.getAttribute("href") + location.hash;
+    a.addEventListener("mouseenter", () => show(a.dataset.lang));
+    a.addEventListener("focus", () => show(a.dataset.lang));
+  });
+  document.querySelector(".doors").addEventListener("mouseleave", () => show(pick));
+})();
+/* Ambient sky */
+(function () {
+  const c = document.getElementById("sky"), ctx = c.getContext("2d");
+  const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let w, h, stars = [], motes = [];
+  function size() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = c.clientWidth; h = c.clientHeight; c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    stars = Array.from({ length: Math.round(w * h / 8000) }, () => ({ x: Math.random() * w, y: Math.random() * h * .6, r: Math.random() * 1.3 + .3, p: Math.random() * 6.28 }));
+    motes = Array.from({ length: 22 }, () => ({ x: Math.random() * w, y: Math.random() * h, v: .15 + Math.random() * .35, r: Math.random() * 1.8 + .6 }));
+  }
+  function frame(t) {
+    ctx.clearRect(0, 0, w, h);
+    for (const s of stars) { ctx.fillStyle = "rgba(234,242,255," + (.45 + .45 * Math.sin(t / 900 + s.p)).toFixed(2) + ")"; ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, 6.28); ctx.fill(); }
+    for (const m of motes) { ctx.fillStyle = "rgba(243,201,92,.55)"; ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, 6.28); ctx.fill();
+      if (!still) { m.y -= m.v; if (m.y < -5) { m.y = h + 5; m.x = Math.random() * w; } } }
+    if (!still) requestAnimationFrame(frame);
+  }
+  size(); window.addEventListener("resize", () => { size(); if (still) frame(0); });
+  still ? frame(0) : requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
