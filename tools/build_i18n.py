@@ -34,17 +34,17 @@ T = [
   'alt="Logo di SmartHeal LindaLuna: un gatto bengala in vesti da guaritore che lancia una luce dorata"',
   'alt="Logo de SmartHeal LindaLuna : un chat bengal en robe de soigneur qui lance une lumière dorée"'),
  ('Priest &amp; Druid healing', 'Cure per Sacerdote e Druido', 'Soins de Prêtre et de Druide'),
- ('The right heal, at the right rank, on the right target. It reads incoming damage and lights the heal that will land in time.',
-  'La cura giusta, al rango giusto, sul bersaglio giusto. Legge i danni in arrivo e illumina la cura che arriverà in tempo.',
-  'Le bon soin, au bon rang, sur la bonne cible. Il lit les dégâts entrants et allume le soin qui arrivera à temps.'),
+ ('Keeps you and your party alive on both roads: the right heal, at the right rank, on the right target, in time.',
+  'Tiene in vita te e il tuo gruppo su entrambe le strade: la cura giusta, al rango giusto, sul bersaglio giusto, in tempo.',
+  'Vous garde en vie, vous et votre groupe, sur les deux routes : le bon soin, au bon rang, sur la bonne cible, à temps.'),
  ('Discover SmartHeal →', 'Scopri SmartHeal →', 'Découvrir SmartHeal →'),
  ('alt="Luna\'s Parcours logo: a Bengal cat adventurer over a quest map with a dotted route"',
   'alt="Logo di Luna\'s Parcours: un gatto bengala avventuriero su una mappa con un percorso tratteggiato"',
   'alt="Logo de Luna\'s Parcours : un chat bengal aventurier sur une carte avec un itinéraire en pointillés"'),
  ('Alliance levelling 1–30', 'Livellamento Alleanza 1–30', 'Montée en niveau Alliance 1–30'),
- ('Pick what you want. Get the shortest route to it. Follow the arrow, across zones, ships and flight paths.',
-  'Scegli cosa vuoi. Ottieni il percorso più breve per arrivarci. Segui la freccia, tra zone, navi e voli.',
-  'Choisissez ce que vous voulez. Obtenez le chemin le plus court. Suivez la flèche, à travers les zones, les bateaux et les vols.'),
+ ('The shortest road to the gear you want, with nothing else attached. Pick it, follow the arrow.',
+  'La strada più corta verso l\'equipaggiamento che vuoi, senza nient\'altro attaccato. Sceglilo e segui la freccia.',
+  'Le chemin le plus court vers l\'équipement que vous voulez, sans rien d\'autre autour. Choisissez-le, suivez la flèche.'),
  ('Discover Luna\'s Parcours →', 'Scopri Luna\'s Parcours →', 'Découvrir Luna\'s Parcours →'),
 
  # Luna
@@ -364,9 +364,9 @@ T = [
   'alt="Logo di Luna\'s Journey: un gatto bengala viaggiatore davanti a un mappamondo con un percorso di impronte e una lista di controllo"',
   'alt="Logo de Luna\'s Journey : un chat bengal voyageur devant un globe avec un chemin d\'empreintes et une liste de contrôle"'),
  ('Completionist · all levels', 'Completista · tutti i livelli', 'Complétionniste · tous niveaux'),
- ('Every quest your character can do, zone by zone, in the shortest order. Every skip has a reason.',
-  'Ogni missione che il tuo personaggio può fare, zona per zona, nell\'ordine più breve. Ogni missione saltata ha un motivo.',
-  'Chaque quête que votre personnage peut faire, zone par zone, dans l\'ordre le plus court. Chaque quête passée a une raison.'),
+ ('The lore: every quest, zone by zone. Tick the gear you want and the route gets it first; tick nothing and it simply follows the story.',
+  'Il lore: ogni missione, zona per zona. Spunta l\'equipaggiamento che vuoi e il percorso lo va a prendere per primo; se non spunti niente, segue semplicemente la storia.',
+  'Le lore : chaque quête, zone par zone. Cochez l\'équipement que vous voulez et l\'itinéraire va le chercher en premier ; ne cochez rien et il suit simplement l\'histoire.'),
  ('Discover Luna\'s Journey →', 'Scopri Luna\'s Journey →', 'Découvrir Luna\'s Journey →'),
 
  # comparison
@@ -499,6 +499,9 @@ T = [
   'alt="In gioco: la scheda Opzioni con lingue, freccia GPS, avvisi di equipaggiamento e impostazioni della finestra"',
   'alt="En jeu : l\'onglet Options avec les langues, la flèche GPS, les alertes d\'équipement et les réglages de la fenêtre"'),
  ('Options: language, arrow, gear alerts and window', 'Opzioni: lingua, freccia, avvisi di equipaggiamento e finestra', 'Options : langue, flèche, alertes d\'équipement et fenêtre'),
+ ('<p class="lede">Three addons that never step on each other. Use one, or all three together.</p>',
+  '<p class="lede">Tre addon che non si pestano mai i piedi. Usane uno, o tutti e tre insieme.</p>',
+  '<p class="lede">Trois addons qui ne se marchent jamais sur les pieds. Utilisez-en un, ou les trois ensemble.</p>'),
 ]
 
 src = open(SRC, encoding="utf-8").read()
