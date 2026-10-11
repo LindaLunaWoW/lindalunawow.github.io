@@ -404,6 +404,8 @@ footer .farewell{font-size:1rem}
         <tr><td>Best reward for your role highlighted</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Steps left until each chosen item</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Dungeon quests, marked as group content</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Class quests included, even outside your zones</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Where to go next, and how to get there</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Gear upgrade pop-up</td><td><span class="yes">✓</span></td><td><span class="yes">✓*</span></td><td><span class="yes">✓*</span></td></tr>
         <tr><td>Gear scored for your class and specialisation</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
         <tr><td>Weapons you have not learned are flagged</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
@@ -677,12 +679,13 @@ footer .farewell{font-size:1rem}
       </tbody>
     </table></div>
     <p class="lede" style="margin-top:14px">Both pick up nearby quests together, respect chain order and keep no more than 15 quests open at once. In our tests on Elwynn Forest, this order cut the walking distance by more than half. Want the whole story of your zones? That is <a href="#journey">Luna's Journey</a>.</p>
+    <p class="lede" style="margin-top:14px">Class quests are always included, even outside your zones, for example Moonglade for Druids. With nothing ticked, <strong>Create route</strong> takes you through your class quests. When your zones have nothing left for you, a pop-up suggests where to go next: the zone with the best upgrades, or the next zone for your level, and how to get there. Press <strong>Take me there</strong> and the arrow leads the way.</p>
   </section>
 
   <section aria-labelledby="pc-gps">
     <div class="sec-head"><span class="eyebrow">The GPS arrow</span><h2 id="pc-gps">From Rut'theran to Auberdine without a wrong turn</h2></div>
     <div class="grid-2">
-      <div class="feat"><h3>Across zones</h3><p>It tells you which ship, zeppelin, flight path or Skyboat to take and points to the departure point.</p></div>
+      <div class="feat"><h3>Across zones</h3><p>It tells you which ship, zeppelin, flight path or Skyboat to take and points to the departure point. Ships leave from the exact dock, and only flight paths you have already discovered are suggested.</p></div>
       <div class="feat"><h3>On the world map</h3><p>The destination gets the game's own map pin, so you can see mountains and rivers and choose your own path.</p></div>
       <div class="feat"><h3>Best position first</h3><p>The game's own quest point, then a position you recorded, then the quest database, then the guide.</p></div>
       <div class="feat"><h3>Checked by the server</h3><p>Every quest is checked with the game server before you see it. <span class="k">✓</span> confirmed, <span class="k">⏳</span> being checked.</p></div>
@@ -717,6 +720,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/parcours goals</code></td><td>Open the Goals tab</td></tr>
         <tr><td><code>/parcours arrow</code></td><td>Show or hide the arrow</td></tr>
         <tr><td><code>/parcours mark &lt;name&gt;</code></td><td>Record your position as the place of an NPC</td></tr>
+        <tr><td><code>/parcours zone</code></td><td>Suggest where to go next</td></tr>
         <tr><td><code>/parcours export</code></td><td>Export recorded positions to share corrections</td></tr>
       </tbody>
     </table></div>
@@ -779,6 +783,8 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Easier in a group</h3><p>A <span class="k">[2+]</span> tag marks quests that are easier with friends: the game's group tag, elite enemies, or many enemies around the objective. Elite quests stay on your journey; you decide.</p></div>
       <div class="feat"><h3>Professions</h3><p>Cooking, Fishing and First Aid are always part of the journey. Every other profession joins as soon as you learn it, and quests that need a higher skill wait until you reach it.</p></div>
       <div class="feat"><h3>With the other Luna addons</h3><p>Install it next to Luna's Parcours and SmartHeal LindaLuna. Settings and arrow stay separate, and gear alerts and Luna's farewell are never doubled. Luna's Journey is for doing everything; for a few items, a profession or a long chain, Luna's Parcours is the right tool.</p></div>
+      <div class="feat"><h3>Class quests from any zone</h3><p>Class quests you can already take join the journey even outside your zones, with the quests that unlock them, for example Moonglade for Druids. Hover the box to see every quest of your class and where you stand.</p></div>
+      <div class="feat"><h3>Where next?</h3><p>When nothing is left to do in your zones, a pop-up suggests the next zone: its levels and yours, how many quests you can do there now, and how to get there. Press <strong>Take me there</strong> and the arrow guides you to the first quest.</p></div>
     </div>
   </section>
 
@@ -813,6 +819,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/journey start</code></td><td>Start or recalculate the journey</td></tr>
         <tr><td><code>/journey gear</code></td><td>Open the Gear tab</td></tr>
         <tr><td><code>/journey arrow</code></td><td>Show or hide the arrow</td></tr>
+        <tr><td><code>/journey next</code></td><td>Suggest the next zone</td></tr>
         <tr><td><code>/journey export</code></td><td>Export recorded positions to share corrections</td></tr>
       </tbody>
     </table></div>

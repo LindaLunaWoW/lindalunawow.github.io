@@ -404,6 +404,8 @@ footer .farewell{font-size:1rem}
         <tr><td>Meilleure récompense pour votre rôle mise en évidence</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Étapes restantes pour chaque objet choisi</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Quêtes de donjon, signalées comme contenu de groupe</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Quêtes de classe incluses, même hors de vos zones</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Où aller ensuite, et comment s'y rendre</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Fenêtre d'équipement meilleur</td><td><span class="yes">✓</span></td><td><span class="yes">✓*</span></td><td><span class="yes">✓*</span></td></tr>
         <tr><td>Équipement évalué selon votre classe et spécialisation</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
         <tr><td>Armes pas encore apprises signalées</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td><td><span class="no">—</span></td></tr>
@@ -677,12 +679,13 @@ footer .farewell{font-size:1rem}
       </tbody>
     </table></div>
     <p class="lede" style="margin-top:14px">Les deux prennent ensemble les quêtes proches, respectent l'ordre des chaînes et ne gardent jamais plus de 15 quêtes ouvertes. Dans nos tests en forêt d'Elwynn, cet ordre a réduit de plus de moitié la distance à pied. Vous voulez toute l'histoire de vos zones ? C'est <a href="#journey">Luna's Journey</a>.</p>
+    <p class="lede" style="margin-top:14px">Les quêtes de classe sont toujours incluses, même hors de vos zones, par exemple Reflet-de-Lune pour les druides. Si rien n'est coché, <strong>Créer l'itinéraire</strong> vous fait faire vos quêtes de classe. Quand vos zones n'ont plus rien pour vous, une fenêtre vous suggère où aller : la zone avec les meilleures améliorations, ou la prochaine zone pour votre niveau, et comment vous y rendre. Appuyez sur <strong>Emmène-moi</strong> et la flèche vous guide.</p>
   </section>
 
   <section aria-labelledby="pc-gps">
     <div class="sec-head"><span class="eyebrow">La flèche GPS</span><h2 id="pc-gps">De Rut'theran à Auberdine sans se tromper de route</h2></div>
     <div class="grid-2">
-      <div class="feat"><h3>D'une zone à l'autre</h3><p>Elle vous dit quel bateau, zeppelin, vol ou Skyboat prendre et pointe vers le point de départ.</p></div>
+      <div class="feat"><h3>D'une zone à l'autre</h3><p>Elle vous dit quel bateau, zeppelin, vol ou Skyboat prendre et pointe vers le point de départ. Les bateaux partent du quai exact, et seuls les vols que vous avez déjà découverts sont proposés.</p></div>
       <div class="feat"><h3>Sur la carte du monde</h3><p>La destination reçoit l'épingle du jeu : vous voyez montagnes et rivières et choisissez votre chemin.</p></div>
       <div class="feat"><h3>La meilleure position d'abord</h3><p>Le point de quête du jeu, puis une position que vous avez enregistrée, puis la base de quêtes, puis le guide.</p></div>
       <div class="feat"><h3>Vérifié par le serveur</h3><p>Chaque quête est vérifiée auprès du serveur de jeu avant que vous la voyiez. <span class="k">✓</span> confirmée, <span class="k">⏳</span> en cours de vérification.</p></div>
@@ -717,6 +720,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/parcours goals</code></td><td>Ouvre l'onglet Objectifs</td></tr>
         <tr><td><code>/parcours arrow</code></td><td>Affiche ou masque la flèche</td></tr>
         <tr><td><code>/parcours mark &lt;nom&gt;</code></td><td>Enregistre votre position comme emplacement d'un PNJ</td></tr>
+        <tr><td><code>/parcours zone</code></td><td>Suggère où aller ensuite</td></tr>
         <tr><td><code>/parcours export</code></td><td>Exporte les positions enregistrées pour partager des corrections</td></tr>
       </tbody>
     </table></div>
@@ -779,6 +783,8 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Plus facile en groupe</h3><p>Une étiquette <span class="k">[2+]</span> signale les quêtes plus faciles entre amis : étiquette de groupe du jeu, ennemis élites ou nombreux ennemis autour de l'objectif. Les quêtes élites restent dans le voyage : c'est vous qui décidez.</p></div>
       <div class="feat"><h3>Métiers</h3><p>Cuisine, Pêche et Secourisme font toujours partie du voyage. Tout autre métier s'ajoute dès que vous l'apprenez, et les quêtes qui demandent une compétence plus élevée attendent que vous l'atteigniez.</p></div>
       <div class="feat"><h3>Avec les autres addons de Luna</h3><p>Installez-le à côté de Luna's Parcours et de SmartHeal LindaLuna. Réglages et flèche restent séparés, et les alertes d'équipement et l'adieu de Luna ne sont jamais doublés. Luna's Journey sert à tout faire ; pour quelques objets, un métier ou une longue chaîne, Luna's Parcours est l'outil qu'il vous faut.</p></div>
+      <div class="feat"><h3>Quêtes de classe de toutes les zones</h3><p>Les quêtes de classe que vous pouvez déjà prendre rejoignent le voyage même hors de vos zones, avec les quêtes qui les débloquent, par exemple Reflet-de-Lune pour les druides. Survolez la case pour voir toutes les quêtes de votre classe et où vous en êtes.</p></div>
+      <div class="feat"><h3>Et maintenant, où ?</h3><p>Quand il ne reste rien à faire dans vos zones, une fenêtre vous suggère la zone suivante : ses niveaux et le vôtre, combien de quêtes vous pouvez y faire tout de suite et comment vous y rendre. Appuyez sur <strong>Emmène-moi</strong> et la flèche vous guide jusqu'à la première quête.</p></div>
     </div>
   </section>
 
@@ -813,6 +819,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/journey start</code></td><td>Commence ou recalcule le voyage</td></tr>
         <tr><td><code>/journey gear</code></td><td>Ouvre l'onglet Équipement</td></tr>
         <tr><td><code>/journey arrow</code></td><td>Affiche ou masque la flèche</td></tr>
+        <tr><td><code>/journey next</code></td><td>Suggère la zone suivante</td></tr>
         <tr><td><code>/journey export</code></td><td>Exporte les positions enregistrées pour partager des corrections</td></tr>
       </tbody>
     </table></div>
