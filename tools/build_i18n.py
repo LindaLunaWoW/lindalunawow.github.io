@@ -358,7 +358,6 @@ T = [
   'Creato da Priestael e Druidel LindaLuna. SmartHeal LindaLuna, Luna\'s Parcours e Luna\'s Journey sono addon gratuiti creati da fan, non affiliati né approvati da Blizzard Entertainment. World of Warcraft è un marchio di Blizzard Entertainment, Inc.',
   'Créé par Priestael et Druidel LindaLuna. SmartHeal LindaLuna, Luna\'s Parcours et Luna\'s Journey sont des addons gratuits créés par des fans, ni affiliés ni approuvés par Blizzard Entertainment. World of Warcraft est une marque de Blizzard Entertainment, Inc.'),
  # ---------- v2: Luna's Journey, comparison, coming soon ----------
- ('Coming soon on CurseForge', 'Presto su CurseForge', 'Bientôt sur CurseForge'),
  ('alt="Luna\'s Journey logo: a Bengal cat traveller in front of a globe with a paw-print route and a checklist"',
   'alt="Logo di Luna\'s Journey: un gatto bengala viaggiatore davanti a un mappamondo con un percorso di impronte e una lista di controllo"',
   'alt="Logo de Luna\'s Journey : un chat bengal voyageur devant un globe avec un chemin d\'empreintes et une liste de contrôle"'),
