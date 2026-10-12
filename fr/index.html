@@ -615,6 +615,7 @@ footer .farewell{font-size:1rem}
         <tr><td>Étapes restantes pour chaque objet choisi</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Quêtes de donjon, signalées comme contenu de groupe</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Quêtes de classe incluses, même hors de vos zones</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
+        <tr><td>Onglet Classe : un itinéraire avec seulement vos quêtes de classe</td><td><span class="no">—</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Où aller ensuite, et comment s'y rendre</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Les secrets de Luna : quêtes cachées</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
         <tr><td>Flèche GPS entre zones, bateaux et vols</td><td><span class="yes">✓</span></td><td><span class="yes">✓</span></td></tr>
@@ -645,6 +646,15 @@ footer .farewell{font-size:1rem}
     </div>
   </section>
 
+  <section aria-labelledby="lj-class">
+    <div class="sec-head"><span class="eyebrow">Onglet Classe</span><h2 id="lj-class">Seulement vos quêtes de classe</h2>
+      <p class="lede">À côté de Zones…, l'onglet Classe liste les quêtes de votre classe : à faire maintenant, plus tard et faites. Appuyez sur <strong>Suivre seulement les quêtes de classe</strong> et l'itinéraire ne contient rien d'autre : vos quêtes de classe dans n'importe quelle zone, plus celles qui les débloquent. Il est recalculé à chaque niveau, pour chaque classe de l'Alliance.</p></div>
+    <div class="gallery">
+      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj2-class.webp" alt="En jeu : l'onglet Classe d'un Druide avec une quête à faire maintenant dans les Alterac Mountains et les quêtes de classe à venir, chacune avec son niveau" width="1185" height="637" loading="lazy"></button><figcaption>Onglet Classe : ce qu'il faut faire maintenant, ce qui vient plus tard et à partir de quel niveau</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj2-class-route.webp" alt="En jeu : l'onglet Parcours en mode quêtes de classe seulement, la première étape est d'accepter Child of Nature dans les Alterac Mountains et la flèche montre le chemin" width="1185" height="637" loading="lazy"></button><figcaption>L'itinéraire avec seulement les quêtes de classe : la flèche mène à la suivante, même loin</figcaption></figure>
+    </div>
+  </section>
+
   <section aria-labelledby="lj-gearing">
     <div class="sec-head"><span class="eyebrow">Gearing</span><h2 id="lj-gearing">Choisissez l'équipement, suivez la flèche</h2>
       <p class="lede">Tout ce que faisait Luna's Parcours vit désormais ici. Cochez les récompenses que vous voulez dans <strong>Objectifs</strong>, appuyez sur <strong>Créer l'itinéraire</strong>, et l'addon les récupère toutes dans l'ordre le plus court.</p></div>
@@ -665,10 +675,12 @@ footer .farewell{font-size:1rem}
     <div class="sec-head"><span class="eyebrow">Services de la ville</span><h2 id="lj-city">La banque, la poste, votre maître : à un clic</h2>
       <p class="lede">Sur le bord de la fenêtre se trouve un petit onglet avec une flèche. Cliquez dessus et le tiroir des services s'ouvre à côté de la fenêtre. Cochez un service et la flèche vous mène au plus proche ; à l'arrivée, elle revient à votre itinéraire.</p></div>
     <div class="grid-2">
-      <div class="feat"><h3>Tous les services de la ville</h3><p>Boîte aux lettres, hôtel des ventes, banque, maître de vol, bateaux, auberge, réparations, votre maître de classe, maître d'armes, fournitures générales, fournitures d'artisanat, composants, nourriture et boissons, et le maître des écuries pour les Chasseurs. Chaque ligne montre à quelle distance se trouve le plus proche, ou dans quelle zone il se trouve si votre ville n'en a pas.</p></div>
+      <div class="feat"><h3>Tous les services de la ville</h3><p>Boîte aux lettres, hôtel des ventes, banque, maître de vol, bateaux, auberge, réparations, votre maître de classe, maître d'armes, fournitures générales, fournitures d'artisanat, composants, nourriture et boissons, et le maître des écuries pour les Chasseurs. Chaque ligne montre à quelle distance se trouve le plus proche, ou dans quelle zone il se trouve si votre ville n'en a pas. Bateaux, vaisseaux du ciel et portails ont une ligne par trajet possible d'ici, seulement ceux de votre faction.</p></div>
       <div class="feat"><h3>Vos métiers, un par un</h3><p>Une ligne avec le maître de chaque métier que vous connaissez, par exemple Herboristerie ou Secourisme. Les métiers que vous n'avez pas appris n'apparaissent pas.</p></div>
       <div class="feat"><h3>Chaque ville, petite ou grande</h3><p>Capitales, villages, avant-postes et les nouvelles villes de Forever comme Valanaar. En ville, la flèche de l'onglet devient dorée, et le tiroir s'ouvre tout seul quand la fenêtre est ouverte.</p></div>
     </div>
+    <figure class="shot feature-shot" style="margin-top:18px"><button class="zoom" type="button"><img src="../assets/lj2-city.webp" alt="En jeu à Southshore : le tiroir des services à côté de la fenêtre, avec la distance de chaque service ; Maître de vol est coché et la flèche sous le personnage le montre, à 163 mètres" width="1185" height="637" loading="lazy"></button>
+      <figcaption>À Southshore : cochez Maître de vol et la flèche vous y mène. Les services que le village n'a pas indiquent la zone du plus proche.</figcaption></figure>
   </section>
 
   <section aria-labelledby="pc-gps">
@@ -685,8 +697,11 @@ footer .farewell{font-size:1rem}
     <div class="sec-head"><span class="eyebrow">En jeu</span><h2 id="lj-shots">Captures d'écran</h2></div>
     <div class="gallery">
       <figure class="shot wide"><button class="zoom" type="button"><img src="../assets/lj-journey.webp" alt="En jeu : l'onglet Voyage avec la barre de progression de la zone, les métiers, les zones avec leurs barres et les quêtes justifiées que l'on peut ajouter" width="1280" height="633" loading="lazy"></button><figcaption>Onglet Voyage : progression de vos zones et métiers, et quêtes justifiées que vous pouvez ajouter</figcaption></figure>
-      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj-gear.webp" alt="En jeu : l'onglet Équipement avec les récompenses portables, leur gain et un objet coché en priorité ; le chat confirme que l'itinéraire a été recalculé" width="1280" height="633" loading="lazy"></button><figcaption>Onglet Équipement : cochez un objet et l'itinéraire est recalculé pour l'obtenir en premier</figcaption></figure>
-      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj-options.webp" alt="En jeu : l'onglet Options avec les langues, la flèche GPS, les alertes d'équipement et les réglages de la fenêtre" width="1280" height="633" loading="lazy"></button><figcaption>Options : langue, flèche, alertes d'équipement et fenêtre</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj2-menu.webp" alt="En jeu : le menu de départ de Luna's Journey avec Gearing et Questing / Completionist côte à côte, Choisir et Reprendre" width="1185" height="637" loading="lazy"></button><figcaption>Menu de départ : Gearing ou Questing, et Reprendre pour l'itinéraire en cours</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj2-goals.webp" alt="En jeu : l'onglet Objectifs de Gearing avec les quêtes de classe toujours incluses, le rôle, les récompenses de chaque quête et Créer l'itinéraire" width="1185" height="637" loading="lazy"></button><figcaption>Gearing, onglet Objectifs : choisissez les récompenses, puis Créer l'itinéraire</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj2-gear.webp" alt="En jeu : l'onglet Équipement avec le rôle, les poids utilisés et les récompenses que vous pouvez porter avec leur gain ; un objet est coché en priorité" width="1185" height="637" loading="lazy"></button><figcaption>Onglet Équipement : les poids sont affichés clairement ; cochez un objet pour le prioriser</figcaption></figure>
+      <figure class="shot"><button class="zoom" type="button"><img src="../assets/lj2-gear-compare.webp" alt="En jeu : survoler une récompense dans l'onglet Équipement la compare à ce que vous portez et indique que c'est le meilleur choix de la quête pour les soins" width="1185" height="637" loading="lazy"></button><figcaption>Survolez une récompense : la comparaison avec ce que vous portez, et pourquoi c'est le meilleur choix</figcaption></figure>
+      <figure class="shot wide"><button class="zoom" type="button"><img src="../assets/lj2-options.webp" alt="En jeu : les Options avec les langues, la flèche GPS, le bouton de la minicarte, les services de la ville et la fenêtre" width="1185" height="637" loading="lazy"></button><figcaption>Options : langue, flèche, services de la ville et fenêtre</figcaption></figure>
     </div>
   </section>
 
@@ -718,6 +733,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/journey arrow</code></td><td>Affiche ou masque la flèche</td></tr>
         <tr><td><code>/journey mark &lt;nom&gt;</code></td><td>Enregistre votre position comme emplacement d'un PNJ ou d'un quai</td></tr>
         <tr><td><code>/journey export</code></td><td>Exporte les positions enregistrées pour partager des corrections</td></tr>
+        <tr><td><code>/journey class</code></td><td>Ouvre l'onglet Classe</td></tr>
         <tr><td><code>/journey city</code></td><td>Ouvre la fenêtre avec le tiroir des services de la ville</td></tr>
       </tbody>
     </table></div>
