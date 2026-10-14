@@ -509,6 +509,9 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Gear upgrade alerts</h3><p>Loot an item that beats what you wear and a pop-up shows the gain and the stat changes, with Equip, Ignore and Close. Only items your character can really wear, weighted by your spec and talents.</p></div>
       <div class="feat"><h3>Your real numbers</h3><p>SmartHeal reads your spellbook and the healing value of every rank from its tooltip, so talents and gear are included. New ranks appear as you learn them.</p></div>
       <div class="feat"><h3>11 languages</h3><p>English, Deutsch, Français, Español (EU and AL), Italiano, Português, Русский, 한국어, 简体中文, 繁體中文. Spell names come straight from your client.</p></div>
+      <div class="feat"><h3>Buffs and cures</h3><p>The buffs you can give sit left of the bar as soon as you learn them: Fortitude, Divine Spirit, Shadow Protection, Fear Ward, Mark of the Wild, Thorns. A missing buff gets a gold border, an active one is dimmed with its time left, and the rank fits the target's level. Cures light up in the debuff's colour when there is something to remove.</p></div>
+      <div class="feat"><h3>Who is who</h3><p>Each name shows the player's class and spec in class colour, for example <em>Priest · Holy</em> or <em>Warrior · Fury</em>, or their group role when the spec cannot be read.</p></div>
+      <div class="feat"><h3>Fight statistics</h3><p><code>/shstats</code> records each fight on your computer only: duration, mana spent and regained, casts per rank, deaths in the group. Nothing is sent anywhere. The advice does not change; the numbers help tune mana use on real data.</p></div>
     </div>
   </section>
 
@@ -544,6 +547,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/sh</code> or <code>/smartheal</code></td><td>Open the options</td></tr>
         <tr><td><code>/shstatus</code></td><td>Mode, damage source, mana state and current thresholds</td></tr>
         <tr><td><code>/shdebug</code></td><td>Spells in use with values and cast times</td></tr>
+        <tr><td><code>/shstats</code></td><td>Your fight statistics, kept on your computer only</td></tr>
         <tr><td><code>/shgear</code></td><td>Every equippable item in your bags and why it is suggested or skipped</td></tr>
       </tbody>
     </table></div>
@@ -665,10 +669,25 @@ footer .farewell{font-size:1rem}
     <div class="grid-2">
       <div class="feat"><h3>Every service in town</h3><p>Mailbox, auction house, bank, flight master, boats, inn, repairs, your class trainer, weapon master, general goods, trade supplies, reagents, food and drink, and the stable master for Hunters. Each row shows how far the nearest one is, or the zone where it is if your town has none. Boats, skyboats and portals get one row per trip you can take from here, only those of your faction.</p></div>
       <div class="feat"><h3>Your professions, one by one</h3><p>A trainer row for each profession you know, for example Herbalism or First Aid. Professions you have not learned stay out of the way.</p></div>
-      <div class="feat"><h3>Every town, small or large</h3><p>Capitals, villages, outposts and Forever's own towns such as Valanaar. The arrow on the tab turns gold in a town, and the drawer opens by itself while the window is open.</p></div>
+      <div class="feat"><h3>Every town, small or large</h3><p>Capitals, villages, outposts and Forever's own towns such as Valanaar. The arrow on the tab turns gold in a town. Open the drawer with the tab or <code>/journey city</code>, or let it open by itself in towns from the options.</p></div>
     </div>
     <figure class="shot feature-shot" style="margin-top:18px"><button class="zoom" type="button"><img src="assets/lj2-city.webp" alt="In game in Southshore: the services drawer next to the window, with the distance of each service; Flight master is ticked and the arrow under the character points to it, 163 metres away" width="1185" height="637" loading="lazy"></button>
       <figcaption>In Southshore: tick Flight master and the arrow takes you there. Services the village does not have show the zone of the nearest one.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="lj-goto">
+    <div class="sec-head"><span class="eyebrow">Go to location</span><h2 id="lj-goto">Any place, by the safest road for your level</h2>
+      <p class="lede">From the start menu, <strong>Go to location</strong> lists every place, zone by zone: flight points (with a check mark if you know them), inns, banks, auction houses, your class trainers, dungeon entrances, ships, trams, portals and skyboats. Pick one, or search for it, and the trip is planned for your character.</p></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Planned for you</h3><p>Only the flight paths you know and the ships, trams and portals of your faction. Zones well above your level are avoided when there is another way.</p></div>
+      <div class="feat"><h3>One stage at a time</h3><p>The trip is a numbered list: the stage to do now in green, with its tip (which pier, where the tram is). The arrow follows each stage and tells you what to do on arrival. The same plan guides you whenever a quest is in another zone.</p></div>
+      <div class="feat"><h3>Stay on board</h3><p>On a ship that stops on the way, a pop-up tells you to stay on board, and another one when to get off. The addon learns the pier each ship really leaves from.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lj-dungeons">
+    <div class="sec-head"><span class="eyebrow">Dungeons</span><h2 id="lj-dungeons">Every dungeon, its levels, and the quests to get in</h2>
+      <p class="lede">The <strong>Dungeons…</strong> window lists every dungeon and raid of WoW Forever, the new Forever dungeons included, with its recommended level and the zone of its entrance. Where a dungeon needs quests to enter, such as a key or an attunement, tick it and the whole chain goes on your route. Zones with a dungeon get a red <span class="k">D</span>.</p></div>
   </section>
 
   <section aria-labelledby="pc-gps">
@@ -722,6 +741,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/journey mark &lt;name&gt;</code></td><td>Record your position as the place of an NPC or a boat dock</td></tr>
         <tr><td><code>/journey export</code></td><td>Export recorded positions to share corrections</td></tr>
         <tr><td><code>/journey class</code></td><td>Open the Class tab</td></tr>
+        <tr><td><code>/journey goto</code></td><td>Open Go to location</td></tr>
         <tr><td><code>/journey city</code></td><td>Open the window with the city services drawer</td></tr>
       </tbody>
     </table></div>

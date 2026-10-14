@@ -521,6 +521,9 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Alertes d'équipement</h3><p>Ramassez un objet meilleur que celui que vous portez et une fenêtre affiche le gain et les caractéristiques qui changent, avec Équiper, Ignorer et Fermer. Uniquement des objets que votre personnage peut vraiment porter, pondérés selon votre spécialisation et vos talents.</p></div>
       <div class="feat"><h3>Vos vrais chiffres</h3><p>SmartHeal lit votre grimoire et la valeur de soin de chaque rang dans son infobulle : talents et équipement sont inclus. Les nouveaux rangs apparaissent dès que vous les apprenez.</p></div>
       <div class="feat"><h3>11 langues</h3><p>Français, English, Deutsch, Español (EU et AL), Italiano, Português, Русский, 한국어, 简体中文, 繁體中文. Les noms des sorts viennent directement de votre client.</p></div>
+      <div class="feat"><h3>Buffs et soins des affections</h3><p>Les buffs que vous pouvez donner sont à gauche de la barre dès que vous les apprenez : Fortitude, Divine Spirit, Shadow Protection, Fear Ward, Mark of the Wild, Thorns. Un buff manquant a une bordure dorée, un buff actif est atténué avec son temps restant, et le rang convient au niveau de la cible. Les dissipations s'allument de la couleur de l'affection quand il y a quelque chose à retirer.</p></div>
+      <div class="feat"><h3>Qui est qui</h3><p>Chaque nom affiche la classe et la spécialisation du joueur dans la couleur de sa classe, par exemple <em>Priest · Holy</em> ou <em>Warrior · Fury</em>, ou son rôle dans le groupe quand la spécialisation ne peut pas être lue.</p></div>
+      <div class="feat"><h3>Statistiques des combats</h3><p><code>/shstats</code> enregistre chaque combat uniquement sur votre ordinateur : durée, mana dépensé et récupéré, sorts lancés par rang, morts dans le groupe. Rien n'est envoyé. Les conseils ne changent pas : les chiffres servent à régler l'usage du mana sur des données réelles.</p></div>
     </div>
   </section>
 
@@ -556,6 +559,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/sh</code> ou <code>/smartheal</code></td><td>Ouvre les options</td></tr>
         <tr><td><code>/shstatus</code></td><td>Mode, source des dégâts, état du mana et seuils actuels</td></tr>
         <tr><td><code>/shdebug</code></td><td>Sorts utilisés avec valeurs et temps d'incantation</td></tr>
+        <tr><td><code>/shstats</code></td><td>Vos statistiques de combat, uniquement sur votre ordinateur</td></tr>
         <tr><td><code>/shgear</code></td><td>Chaque objet équipable de vos sacs et pourquoi il est suggéré ou écarté</td></tr>
       </tbody>
     </table></div>
@@ -677,10 +681,25 @@ footer .farewell{font-size:1rem}
     <div class="grid-2">
       <div class="feat"><h3>Tous les services de la ville</h3><p>Boîte aux lettres, hôtel des ventes, banque, maître de vol, bateaux, auberge, réparations, votre maître de classe, maître d'armes, fournitures générales, fournitures d'artisanat, composants, nourriture et boissons, et le maître des écuries pour les Chasseurs. Chaque ligne montre à quelle distance se trouve le plus proche, ou dans quelle zone il se trouve si votre ville n'en a pas. Bateaux, vaisseaux du ciel et portails ont une ligne par trajet possible d'ici, seulement ceux de votre faction.</p></div>
       <div class="feat"><h3>Vos métiers, un par un</h3><p>Une ligne avec le maître de chaque métier que vous connaissez, par exemple Herboristerie ou Secourisme. Les métiers que vous n'avez pas appris n'apparaissent pas.</p></div>
-      <div class="feat"><h3>Chaque ville, petite ou grande</h3><p>Capitales, villages, avant-postes et les nouvelles villes de Forever comme Valanaar. En ville, la flèche de l'onglet devient dorée, et le tiroir s'ouvre tout seul quand la fenêtre est ouverte.</p></div>
+      <div class="feat"><h3>Chaque ville, petite ou grande</h3><p>Capitales, villages, avant-postes et les nouvelles villes de Forever comme Valanaar. En ville, la flèche de l'onglet devient dorée. Ouvrez le tiroir avec l'onglet ou <code>/journey city</code>, ou laissez-le s'ouvrir tout seul en ville depuis les options.</p></div>
     </div>
     <figure class="shot feature-shot" style="margin-top:18px"><button class="zoom" type="button"><img src="../assets/lj2-city.webp" alt="En jeu à Southshore : le tiroir des services à côté de la fenêtre, avec la distance de chaque service ; Maître de vol est coché et la flèche sous le personnage le montre, à 163 mètres" width="1185" height="637" loading="lazy"></button>
       <figcaption>À Southshore : cochez Maître de vol et la flèche vous y mène. Les services que le village n'a pas indiquent la zone du plus proche.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="lj-goto">
+    <div class="sec-head"><span class="eyebrow">Aller à un lieu</span><h2 id="lj-goto">N'importe quel lieu, par la route la plus sûre pour votre niveau</h2>
+      <p class="lede">Depuis le menu de départ, <strong>Go to location</strong> liste chaque lieu, zone par zone : points de vol (avec une coche si vous les connaissez), auberges, banques, hôtels des ventes, vos maîtres de classe, entrées de donjon, bateaux, tram, portails et skyboats. Choisissez-en un, ou cherchez-le, et le trajet est planifié pour votre personnage.</p></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Planifié pour vous</h3><p>Seulement les vols que vous connaissez et les bateaux, tram et portails de votre faction. Les zones bien au-dessus de votre niveau sont évitées quand il existe un autre chemin.</p></div>
+      <div class="feat"><h3>Une étape à la fois</h3><p>Le trajet est une liste numérotée : l'étape à faire maintenant en vert, avec son conseil (quel quai, où se trouve le tram). La flèche suit chaque étape et vous dit quoi faire à l'arrivée. Le même plan vous guide chaque fois qu'une quête est dans une autre zone.</p></div>
+      <div class="feat"><h3>Restez à bord</h3><p>Sur un bateau qui fait escale, une fenêtre vous dit de rester à bord, et une autre quand descendre. L'addon apprend le quai d'où chaque bateau part vraiment.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lj-dungeons">
+    <div class="sec-head"><span class="eyebrow">Donjons</span><h2 id="lj-dungeons">Chaque donjon, ses niveaux et les quêtes pour y entrer</h2>
+      <p class="lede">La fenêtre <strong>Dungeons…</strong> liste chaque donjon et raid de WoW Forever, nouveaux donjons de Forever compris, avec son niveau conseillé et la zone de son entrée. Quand il faut des quêtes pour entrer, comme une clé ou une harmonisation, cochez-la et toute la chaîne rejoint votre itinéraire. Les zones avec un donjon ont un <span class="k">D</span> rouge.</p></div>
   </section>
 
   <section aria-labelledby="pc-gps">
@@ -734,6 +753,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/journey mark &lt;nom&gt;</code></td><td>Enregistre votre position comme emplacement d'un PNJ ou d'un quai</td></tr>
         <tr><td><code>/journey export</code></td><td>Exporte les positions enregistrées pour partager des corrections</td></tr>
         <tr><td><code>/journey class</code></td><td>Ouvre l'onglet Classe</td></tr>
+        <tr><td><code>/journey goto</code></td><td>Ouvre Go to location</td></tr>
         <tr><td><code>/journey city</code></td><td>Ouvre la fenêtre avec le tiroir des services de la ville</td></tr>
       </tbody>
     </table></div>

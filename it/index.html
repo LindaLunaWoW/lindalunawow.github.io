@@ -521,6 +521,9 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Avvisi di equipaggiamento migliore</h3><p>Raccogli un oggetto migliore di quello che indossi e un popup mostra il guadagno e le statistiche che cambiano, con Indossa, Ignora e Chiudi. Solo oggetti che il tuo personaggio può davvero indossare, pesati sulla tua specializzazione e sui tuoi talenti.</p></div>
       <div class="feat"><h3>I tuoi numeri reali</h3><p>SmartHeal legge il tuo libro degli incantesimi e il valore di cura di ogni rango dal suo tooltip, quindi talenti ed equipaggiamento sono inclusi. I nuovi ranghi compaiono quando li impari.</p></div>
       <div class="feat"><h3>11 lingue</h3><p>Italiano, English, Deutsch, Français, Español (EU e AL), Português, Русский, 한국어, 简体中文, 繁體中文. I nomi degli incantesimi arrivano direttamente dal tuo client.</p></div>
+      <div class="feat"><h3>Buff e cure</h3><p>I buff che puoi dare stanno a sinistra della barra appena li impari: Fortitude, Divine Spirit, Shadow Protection, Fear Ward, Mark of the Wild, Thorns. Un buff mancante ha il bordo dorato, uno attivo è attenuato con il tempo rimasto, e il grado è adatto al livello del bersaglio. Le cure si accendono del colore del debuff quando c'è qualcosa da rimuovere.</p></div>
+      <div class="feat"><h3>Chi è chi</h3><p>Ogni nome mostra classe e specializzazione del giocatore nel colore della classe, per esempio <em>Priest · Holy</em> o <em>Warrior · Fury</em>, oppure il suo ruolo nel gruppo quando la specializzazione non si può leggere.</p></div>
+      <div class="feat"><h3>Statistiche dei combattimenti</h3><p><code>/shstats</code> registra ogni combattimento solo sul tuo computer: durata, mana speso e recuperato, lanci per grado, morti nel gruppo. Non viene inviato nulla. I consigli non cambiano: i numeri servono a regolare l'uso del mana su dati reali.</p></div>
     </div>
   </section>
 
@@ -556,6 +559,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/sh</code> o <code>/smartheal</code></td><td>Apre le opzioni</td></tr>
         <tr><td><code>/shstatus</code></td><td>Modalità, fonte dei danni, stato del mana e soglie attuali</td></tr>
         <tr><td><code>/shdebug</code></td><td>Incantesimi in uso con valori e tempi di lancio</td></tr>
+        <tr><td><code>/shstats</code></td><td>Le tue statistiche dei combattimenti, solo sul tuo computer</td></tr>
         <tr><td><code>/shgear</code></td><td>Ogni oggetto indossabile nelle borse e perché viene suggerito o scartato</td></tr>
       </tbody>
     </table></div>
@@ -677,10 +681,25 @@ footer .farewell{font-size:1rem}
     <div class="grid-2">
       <div class="feat"><h3>Tutti i servizi della città</h3><p>Cassetta della posta, casa d'aste, banca, maestro di volo, navi, locanda, riparazioni, il tuo istruttore di classe, maestro d'armi, emporio, forniture per artigiani, reagenti, cibo e bevande, e il maestro di stalla per i Cacciatori. Ogni riga mostra quanto dista il più vicino, o in quale zona si trova se nella tua città non c'è. Navi, aeronavi e portali hanno una riga per ogni viaggio che puoi fare da qui, solo quelli della tua fazione.</p></div>
       <div class="feat"><h3>Le tue professioni, una per una</h3><p>Una riga con l'istruttore per ogni professione che conosci, per esempio Erboristeria o Primo soccorso. Le professioni che non hai imparato non compaiono.</p></div>
-      <div class="feat"><h3>Ogni città, piccola o grande</h3><p>Capitali, villaggi, avamposti e le città nuove di Forever come Valanaar. In città la freccia della linguetta diventa dorata, e il cassetto si apre da solo quando la finestra è aperta.</p></div>
+      <div class="feat"><h3>Ogni città, piccola o grande</h3><p>Capitali, villaggi, avamposti e le città nuove di Forever come Valanaar. In città la freccia della linguetta diventa dorata. Apri il cassetto con la linguetta o con <code>/journey city</code>, oppure fallo aprire da solo in città dalle opzioni.</p></div>
     </div>
     <figure class="shot feature-shot" style="margin-top:18px"><button class="zoom" type="button"><img src="../assets/lj2-city.webp" alt="In gioco a Southshore: il cassetto dei servizi accanto alla finestra, con la distanza di ogni servizio; Maestro di volo è spuntato e la freccia sotto il personaggio lo indica, a 163 metri" width="1185" height="637" loading="lazy"></button>
       <figcaption>A Southshore: spunta Maestro di volo e la freccia ti ci porta. I servizi che il villaggio non ha mostrano la zona del più vicino.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="lj-goto">
+    <div class="sec-head"><span class="eyebrow">Vai a un luogo</span><h2 id="lj-goto">Qualsiasi luogo, per la strada più sicura per il tuo livello</h2>
+      <p class="lede">Dal menu iniziale, <strong>Go to location</strong> elenca ogni luogo, zona per zona: punti di volo (con una spunta se li conosci), locande, banche, case d'aste, i tuoi istruttori di classe, ingressi delle spedizioni, navi, tram, portali e skyboat. Scegline uno, o cercalo, e il viaggio viene pianificato per il tuo personaggio.</p></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Pianificato per te</h3><p>Solo i voli che conosci e le navi, i tram e i portali della tua fazione. Le zone molto sopra il tuo livello vengono evitate quando c'è un'altra strada.</p></div>
+      <div class="feat"><h3>Una tappa alla volta</h3><p>Il viaggio è un elenco numerato: la tappa da fare ora in verde, con il suo consiglio (quale molo, dove si trova il tram). La freccia segue ogni tappa e ti dice cosa fare all'arrivo. Lo stesso piano ti guida ogni volta che una missione è in un'altra zona.</p></div>
+      <div class="feat"><h3>Resta a bordo</h3><p>Su una nave che fa scalo, un pop-up ti dice di restare a bordo, e un altro quando scendere. L'addon impara il molo da cui ogni nave parte davvero.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="lj-dungeons">
+    <div class="sec-head"><span class="eyebrow">Spedizioni</span><h2 id="lj-dungeons">Ogni spedizione, i suoi livelli e le missioni per entrare</h2>
+      <p class="lede">La finestra <strong>Dungeons…</strong> elenca ogni spedizione e incursione di WoW Forever, comprese le nuove di Forever, con il livello consigliato e la zona dell'ingresso. Se per entrare servono missioni, come una chiave o un'abilitazione, spuntala e tutta la catena entra nel tuo percorso. Le zone con una spedizione hanno una <span class="k">D</span> rossa.</p></div>
   </section>
 
   <section aria-labelledby="pc-gps">
@@ -734,6 +753,7 @@ footer .farewell{font-size:1rem}
         <tr><td><code>/journey mark &lt;nome&gt;</code></td><td>Registra la tua posizione come luogo di un PNG o di un molo</td></tr>
         <tr><td><code>/journey export</code></td><td>Esporta le posizioni registrate per condividere correzioni</td></tr>
         <tr><td><code>/journey class</code></td><td>Apre la scheda Classe</td></tr>
+        <tr><td><code>/journey goto</code></td><td>Apre Go to location</td></tr>
         <tr><td><code>/journey city</code></td><td>Apre la finestra con il cassetto dei servizi della città</td></tr>
       </tbody>
     </table></div>
