@@ -358,7 +358,7 @@ footer .farewell{font-size:1rem}
       <a class="addon-card" href="#smartheal">
         <img src="../assets/smartheal-lindaluna.webp" alt="Logo de SmartHeal LindaLuna : un chat bengal en robe de soigneur qui lance une lumière dorée" width="720" height="720">
         <div class="body">
-          <span class="who">Soins de Prêtre et de Druide</span>
+          <span class="who">Soins et buffs · Prêtre, Druide, Paladin, Chaman</span>
           <h3>SmartHeal LindaLuna</h3>
           <p>Vous garde en vie, vous et votre groupe, tout au long de la route : le bon soin, au bon rang, sur la bonne cible, à temps.</p>
           <span class="go">Découvrir SmartHeal →</span>
@@ -435,7 +435,7 @@ footer .farewell{font-size:1rem}
   <section class="page-head">
     <img src="../assets/smartheal-lindaluna.webp" alt="Logo de SmartHeal LindaLuna" width="720" height="720">
     <div class="text">
-      <span class="eyebrow">Assistant de soins · Prêtre et Druide</span>
+      <span class="eyebrow">Soins et buffs · Prêtre, Druide, Paladin, Chaman</span>
       <h1>SmartHeal LindaLuna</h1>
       <p class="tagline">Le bon soin, au bon rang, sur la bonne cible, en un coup d'œil.</p>
       <p class="lede">Pour chaque membre du groupe, SmartHeal allume le sort et le rang adaptés à l'instant : la vie manquante, la vitesse des dégâts et le temps d'incantation de chaque soin. Il ne lance jamais rien tout seul. Vous cliquez, il vous montre ce qui a du sens.</p>
@@ -504,11 +504,26 @@ footer .farewell{font-size:1rem}
         <tr><td>Tank à 85 %, dégâts légers et constants (1 % PV/s)</td><td><strong>Rénovation / Récupération</strong>. Le soin sur la durée dépasse les dégâts, pas de mana gaspillé sur un gros soin.</td></tr>
         <tr><td>Joueur à 70 %, aucun dégât entrant</td><td><strong>Le plus petit rang</strong> qui le remet à fond. Aucun soin gaspillé.</td></tr>
         <tr><td>Tank qui perd 70 % de sa vie en un seul coup</td><td><strong>Soins rapides + Bouclier</strong> (Prêtre) ou <strong>Rétablissement + Prompte guérison</strong> (Druide). Les soins lents arriveraient trop tard.</td></tr>
+        <tr><td>Le même coup, pour un Paladin ou un Chaman</td><td><strong>Holy Shock</strong> ou <strong>Flash of Light</strong> (Paladin), <strong>Riptide</strong> ou <strong>Lesser Healing Wave</strong> (Chaman).</td></tr>
+        <tr><td>Un sort en recharge</td><td>Jamais allumé avant d'être prêt : Holy Shock, Riptide, Lay on Hands, techniques raciales.</td></tr>
         <tr><td>Votre Rénovation est déjà active</td><td>Aucun soin sur la durée suggéré avant qu'elle n'expire.</td></tr>
         <tr><td>Pas assez de mana pour un rang</td><td><strong>Le meilleur soin que vous pouvez encore payer</strong>. Les icônes trop chères ont un voile bleu, comme les barres d'action du jeu.</td></tr>
         <tr><td>Votre mana passe sous 30 %</td><td><strong>Mode économie de mana</strong> : rangs plus petits, soins d'urgence seulement quand c'est vraiment nécessaire.</td></tr>
       </tbody>
     </table></div>
+  </section>
+
+  <section aria-labelledby="sh-classes">
+    <div class="sec-head"><span class="eyebrow">Prêtre · Druide · Paladin · Chaman</span><h2 id="sh-classes">Chaque soigneur de WoW Forever, Alliance et Horde</h2>
+      <p class="lede">SmartHeal reconnaît votre classe tout seul. Chaque classe a ses soins, ses buffs, ses dissipations et sa propre logique.</p></div>
+    <div class="grid-2">
+      <div class="feat"><h3>Prêtre</h3><p>Renew, Heal, Greater Heal, Flash Heal et Power Word: Shield. Fortitude, Divine Spirit, Shadow Protection et Fear Ward comme buffs. Les soins raciaux de Forever aussi : Divine Grace (Humain) et Desperate Prayer (Nain).</p></div>
+      <div class="feat"><h3>Druide</h3><p>Rejuvenation, Healing Touch, Regrowth et Swiftmend. Mark of the Wild et Thorns comme buffs. Remove Curse et Abolish Poison pour retirer malédictions et poisons.</p></div>
+      <div class="feat"><h3>Paladin</h3><p>Holy Light, Flash of Light, Holy Shock pour les urgences, et Lay on Hands seulement quand un joueur va mourir. Chaque Paladin ne peut donner qu'une bénédiction par cible, donc celle qui convient au joueur s'allume : Kings ou Sanctuary pour les tanks, Wisdom pour les soigneurs et lanceurs de sorts, Might pour les Guerriers et Voleurs. Aussi Cleanse, Blessing of Protection et Redemption.</p></div>
+      <div class="feat"><h3>Chaman</h3><p>Healing Wave, Lesser Healing Wave pour les urgences, et Riptide, le talent de Forever. Chain Heal est affiché mais jamais allumé, car sa valeur dépend du nombre de joueurs blessés. Cure Poison, Cure Disease et Ancestral Spirit.</p></div>
+      <div class="feat"><h3>Le tank en haut</h3><p>Le tank est toujours sur la première ligne : le joueur avec le rôle Tank, ou le Guerrier si personne ne l'a. L'ordre ne change qu'hors combat, donc les lignes ne bougent jamais sous votre souris pendant un combat.</p></div>
+      <div class="feat"><h3>Familiers et techniques raciales</h3><p>Les familiers des Chasseurs et des Démonistes ont une ligne plus petite sous leur maître, avec vos soins. Les techniques raciales s'allument sur votre ligne quand elles servent, comme Stoneform (Nain) ou Shatter Curse (Orc).</p></div>
+    </div>
   </section>
 
   <section aria-labelledby="sh-more">
@@ -521,7 +536,7 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Alertes d'équipement</h3><p>Ramassez un objet meilleur que celui que vous portez et une fenêtre affiche le gain et les caractéristiques qui changent, avec Équiper, Ignorer et Fermer. Uniquement des objets que votre personnage peut vraiment porter, pondérés selon votre spécialisation et vos talents.</p></div>
       <div class="feat"><h3>Vos vrais chiffres</h3><p>SmartHeal lit votre grimoire et la valeur de soin de chaque rang dans son infobulle : talents et équipement sont inclus. Les nouveaux rangs apparaissent dès que vous les apprenez.</p></div>
       <div class="feat"><h3>11 langues</h3><p>Français, English, Deutsch, Español (EU et AL), Italiano, Português, Русский, 한국어, 简体中文, 繁體中文. Les noms des sorts viennent directement de votre client.</p></div>
-      <div class="feat"><h3>Buffs et soins des affections</h3><p>Les buffs que vous pouvez donner sont à gauche de la barre dès que vous les apprenez : Fortitude, Divine Spirit, Shadow Protection, Fear Ward, Mark of the Wild, Thorns. Un buff manquant a une bordure dorée, un buff actif est atténué avec son temps restant, et le rang convient au niveau de la cible. Les dissipations s'allument de la couleur de l'affection quand il y a quelque chose à retirer.</p></div>
+      <div class="feat"><h3>Buffs et soins des affections</h3><p>Les buffs que vous pouvez donner sont à gauche de la barre dès que vous les apprenez : Fortitude, Divine Spirit, Shadow Protection, Fear Ward, Mark of the Wild, Thorns et les bénédictions du Paladin. Un buff manquant a une bordure dorée, un buff actif est atténué avec son temps restant, et le rang convient au niveau de la cible. Les dissipations s'allument de la couleur de l'affection quand il y a quelque chose à retirer.</p></div>
       <div class="feat"><h3>Qui est qui</h3><p>Chaque nom affiche la classe et la spécialisation du joueur dans la couleur de sa classe, par exemple <em>Priest · Holy</em> ou <em>Warrior · Fury</em>, ou son rôle dans le groupe quand la spécialisation ne peut pas être lue.</p></div>
       <div class="feat"><h3>Statistiques des combats</h3><p><code>/shstats</code> enregistre chaque combat uniquement sur votre ordinateur : durée, mana dépensé et récupéré, sorts lancés par rang, morts dans le groupe. Rien n'est envoyé. Les conseils ne changent pas : les chiffres servent à régler l'usage du mana sur des données réelles.</p></div>
     </div>
