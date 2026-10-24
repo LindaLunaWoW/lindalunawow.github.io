@@ -327,6 +327,7 @@ footer .farewell{font-size:1rem}
     <span class="eyebrow">Addons gratuits pour WoW Forever</span>
     <h1>LindaLuna</h1>
     <p class="lede">Deux addons créés par un Prêtre et un Druide qui jouent côte à côte. L'un garde votre groupe en vie ; l'autre vous accompagne dans chaque quête, ou droit vers l'équipement que vous voulez. Tous deux portent le nom de Luna.</p>
+    <div class="chips" style="justify-content:center;margin-top:14px"><span class="chip on">Prêts pour le lancement de WoW Forever · 4 novembre</span></div>
     <svg class="islands" viewBox="0 0 560 120" aria-hidden="true">
       <defs>
         <linearGradient id="rock" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6a5a9e"/><stop offset="1" stop-color="#241d55"/></linearGradient>
@@ -402,7 +403,7 @@ footer .farewell{font-size:1rem}
         <span class="eyebrow">Qui sommes-nous</span>
         <h2 id="about-h">Un Prêtre, un Druide et Luna</h2>
         <p class="first">Nous sommes Priestael et Druidel LindaLuna, deux frères qui montent en niveau côte à côte dans WoW Forever. L'un soigne avec la Lumière, l'autre avec la nature.</p>
-        <p>Nous avons créé SmartHeal et Luna's Journey parce que nous les voulions pour nous-mêmes : le bon soin au bon moment, et chaque quête de chaque zone, ou le chemin le plus court vers l'équipement que nous cherchions, sans perdre une soirée. Nous testons chaque version dans la bêta avec nos propres personnages avant qu'elle n'arrive chez vous.</p>
+        <p>Nous avons créé SmartHeal et Luna's Journey parce que nous les voulions pour nous-mêmes : le bon soin au bon moment, et chaque quête de chaque zone, ou le chemin le plus court vers l'équipement que nous cherchions, sans perdre une soirée. Nous testons chaque version en jeu avec nos propres personnages avant qu'elle n'arrive chez vous.</p>
         <p>Luna marche devant, comme elle l'a toujours fait.</p>
         <div class="pair"><span class="chip"><b>Priestael</b> · Prêtre</span><span class="chip"><b>Druidel LindaLuna</b> · Druide</span><span class="chip"><b>Luna</b> · ouvre la voie</span></div>
         <div class="btn-row"><a class="btn btn-ghost" href="#support">Soutenez-nous ou écrivez-nous</a></div>
@@ -539,6 +540,9 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Buffs et soins des affections</h3><p>Les buffs que vous pouvez donner sont à gauche de la barre dès que vous les apprenez : Fortitude, Divine Spirit, Shadow Protection, Fear Ward, Mark of the Wild, Thorns et les bénédictions du Paladin. Un buff manquant a une bordure dorée, un buff actif est atténué avec son temps restant, et le rang convient au niveau de la cible. Les dissipations s'allument de la couleur de l'affection quand il y a quelque chose à retirer.</p></div>
       <div class="feat"><h3>Qui est qui</h3><p>Chaque nom affiche la classe et la spécialisation du joueur dans la couleur de sa classe, par exemple <em>Priest · Holy</em> ou <em>Warrior · Fury</em>, ou son rôle dans le groupe quand la spécialisation ne peut pas être lue.</p></div>
       <div class="feat"><h3>Statistiques des combats</h3><p><code>/shstats</code> enregistre chaque combat uniquement sur votre ordinateur : durée, mana dépensé et récupéré, sorts lancés par rang, morts dans le groupe. Rien n'est envoyé. Les conseils ne changent pas : les chiffres servent à régler l'usage du mana sur des données réelles.</p></div>
+      <div class="feat"><h3>À votre goût</h3><p>L'onglet <strong>Avancé</strong> est facultatif : ordre des icônes de soin, conseils activés ou non, police et taille du texte, couleur et opacité du fond, et barres de vie colorées selon la vie, la classe ou une couleur de votre choix. Un bouton rétablit les réglages par défaut.</p></div>
+      <div class="feat"><h3>Le mana en un coup d'œil</h3><p>Les secondes avant que votre mana soit plein s'affichent sur votre barre de mana, à côté du minuteur de la règle des cinq secondes. Quand le mana est plein, il est simplement écrit <em>mana</em>.</p></div>
+      <div class="feat"><h3>Dissipations, même en donjon</h3><p>En donjon, pendant un combat, le jeu peut cacher le type d'une affection. SmartHeal fait quand même clignoter la bordure du sort de dissipation, et seulement quand ce sort peut la retirer.</p></div>
     </div>
   </section>
 
@@ -658,7 +662,7 @@ footer .farewell{font-size:1rem}
       <div class="feat"><h3>Complétionnistes</h3><p>Vous voulez toute l'histoire de chaque zone, quêtes grises comprises, pas seulement l'XP la plus rapide. Chaque quête faisable est dans la liste, rien ne disparaît en silence, et une barre de progression par zone et par métier montre à quel point votre voyage est vraiment complet. Les quêtes que vous ne pourriez jamais prendre, parce qu'une quête précédente de leur chaîne est fermée à votre race ou classe, sont laissées de côté.</p></div>
       <div class="feat"><h3>Parents occupés</h3><p>Vous avez une heure une fois les enfants couchés et vous ne voulez pas la passer sur un site de quêtes. L'itinéraire le plus court est déjà prêt, vous pouvez vous arrêter et reprendre quand vous voulez, même des jours plus tard, et la flèche vous y mène.</p></div>
       <div class="feat"><h3>Onglet Voyage</h3><p>Vos zones avec une barre de progression : faites, passées par vous, justifiées, en attente de niveau, à faire. En haut de l'onglet, la marche à suivre : décidez si vous voulez prioriser un équipement, puis appuyez sur <span class="k">Commencer le voyage</span> pour toutes les quêtes faisables maintenant, ou sur <span class="k">Juste monter</span> pour de l'XP rapide. L'itinéraire est recalculé à chaque niveau.</p></div>
-      <div class="feat"><h3>Chaque quête passée a une raison</h3><p>Passer demande pourquoi : élite ou groupe, donjon, réputation, cassée ou introuvable, mon choix. D'autres quêtes sont justifiées automatiquement, par exemple un métier que vous n'avez pas appris. Vous pouvez les rétablir ou les ajouter à tout moment.</p></div>
+      <div class="feat"><h3>Chaque quête passée a une raison</h3><p>Passer demande pourquoi : élite ou groupe, donjon, réputation, cassée ou introuvable, mon choix. D'autres quêtes sont justifiées automatiquement, par exemple un métier que vous n'avez pas appris. Vous pouvez les rétablir ou les ajouter à tout moment. Trop difficile pour l'instant ? Passez-la avec ce motif et elle reviendra toute seule quelques niveaux plus tard.</p></div>
       <div class="feat"><h3>Onglet Équipement</h3><p>Chaque récompense que votre personnage peut porter, avec le gain par rapport à ce que vous portez. Les pondérations derrière le score sont affichées clairement. Le meilleur choix pour votre rôle est mis en évidence par un vert discret. Cochez un objet et sa chaîne de quêtes passe en tête de l'itinéraire, qui se recalcule tout seul. Les objets cochés sont listés en haut de l'itinéraire, avec les étapes restantes pour les obtenir. Quand de nouvelles récompenses utiles apparaissent sur votre voyage, une fenêtre les liste et vous propose d'ouvrir l'onglet Équipement.</p></div>
       <div class="feat"><h3>Longues quêtes</h3><p>Les longues chaînes de vos zones, cinq quêtes ou plus, de la plus longue à la plus courte, avec leur progression, leurs niveaux et leur récompense finale. Elles font déjà partie du voyage ; cochez-en une pour la suivre aussi hors de vos zones.</p></div>
       <div class="feat"><h3>Plus facile en groupe</h3><p>Une étiquette <span class="k">[2+]</span> signale les quêtes plus faciles entre amis : étiquette de groupe du jeu, ennemis élites ou nombreux ennemis autour de l'objectif. Les quêtes élites restent dans le voyage : c'est vous qui décidez.</p></div>
@@ -751,9 +755,9 @@ footer .farewell{font-size:1rem}
   </section>
 
   <section aria-labelledby="lj-data">
-    <div class="sec-head"><span class="eyebrow">Données de la bêta</span><h2 id="lj-data">Des données marquées honnêtement</h2>
-      <p class="lede">WoW Forever est en bêta jusqu'au lancement du 4 novembre 2026. Chaque quête est marquée comme vue en jeu pendant la bêta, présente sur Wowhead Forever ou seulement Classic. La bêta s'arrête au niveau 30 : au-delà, la plupart des quêtes sont encore celles de Classic reportées sur Forever. Elles seront confirmées après le lancement. Les niveaux, races et classes sont vérifiés auprès de deux références, Wowhead Forever et forever.warcraftdb.com ; ce que les joueurs voient en jeu passe avant.</p></div>
-    <p class="data-line">Données des quêtes de QuestieDB Forever, vérifiées sur Wowhead Forever et forever.warcraftdb.com · mises à jour chaque semaine jusqu'au lancement, puis chaque mois et à chaque patch</p>
+    <div class="sec-head"><span class="eyebrow">Prêt pour le lancement</span><h2 id="lj-data">Des données marquées honnêtement</h2>
+      <p class="lede">WoW Forever sort le 4 novembre 2026, et Luna's Journey est prêt. Chaque quête est marquée comme vue en jeu, confirmée par Wowhead Forever, ou Classic seulement. Au-dessus du niveau 30, là où la bêta s'arrêtait, la plupart des quêtes sont encore celles de Classic adaptées à Forever : elles seront confirmées dans les premières semaines après le lancement, avec l'aide de vos signalements.</p></div>
+    <p class="data-line">Données des quêtes de QuestieDB Forever, vérifiées sur Wowhead Forever et forever.warcraftdb.com · mises à jour chaque semaine le premier mois après le lancement, puis chaque mois et à chaque patch</p>
   </section>
 
   <section aria-labelledby="lj-howto-h" id="lj-howto">
